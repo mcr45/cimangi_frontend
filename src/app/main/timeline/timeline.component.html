@@ -1,0 +1,13 @@
+
+
+<div class="container">
+  @for (post of posts; track post.id) {
+  <div class="content">
+    <h4>{{post.title}}</h4>
+    <p>{{post.body}}</p>
+    <br>
+    <span>{{post.author}}</span>
+  </div>
+
+  }
+</div>
