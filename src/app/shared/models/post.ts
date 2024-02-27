@@ -4,6 +4,7 @@ export class Post {
   id:number;
   title:String;
   body:String;
+  likes:number;
   created_at:Date;
   author?:User;
 
@@ -12,6 +13,7 @@ export class Post {
     this.id=post.id || 0
     this.title=post.title || ""
     this.body=post.body || ""
+    this.likes=post.likes|| 0
     this.created_at=post.created_at || ""
     this.author=post.user || null
 
