@@ -1,7 +1,7 @@
 import { User } from "./user";
 
 export class Post {
-  id:number;
+  id!:number;
   title:String;
   body:String;
   likes:number;
@@ -10,7 +10,7 @@ export class Post {
 
 
   constructor(post:any){
-    this.id=post.id || 0
+    this.id
     this.title=post.title || ""
     this.body=post.body || ""
     this.likes=post.likes|| 0
