@@ -6,7 +6,7 @@ export const routes: Routes = [
   {path:'',pathMatch:"full",
   loadComponent:()=>import('./features/authentication/authentication.component').then((a)=>a.AuthenticationComponent)
   },
-  {path:'',
+  {path:'home',
 loadComponent:()=>import('./main/timeline/timeline.component').then((c)=>c.TimelineComponent)
 }
 

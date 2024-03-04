@@ -348,3 +348,13 @@ template {
 [hidden] {
   display: none;
 }
+
+html, body {
+  min-height: 100vh;
+  height: auto;
+  margin: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
