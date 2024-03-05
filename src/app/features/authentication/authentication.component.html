@@ -2,12 +2,15 @@
   <div class="container">
     <div class="left">
       <div class="img-box">
-        <img src="/assets/img/cimangilo.jpeg" alt="" srcset="" />
+       @if (toLog) { <img src="/assets/img/cimangilo.jpeg" alt="" srcset="" />}
+       @else { <img src="/assets/img/grandmarobot.png" alt="" srcset="" />}
+
       </div>
     </div>
     <div class="right">
       <div class="form-box">
-        <h1>LOGIN</h1>
+        <h1>{{toLog? 'LOGIN':'SIGNUP'}}</h1>
+        @if (toLog) {
         <form  #loginForm=ngForm (ngSubmit)="OnFormSubmit(loginForm)">
           <div class="input-container">
             <input type="text" id="username" name="username" #username="ngModel" ngModel required><label
@@ -22,8 +25,41 @@
             >
           </div>
           <div class="button-container"><button [disabled]="!loginForm.valid">SUBMIT</button></div>
-        </form>
-        <p>Don't have an account? <a href="">Sign up</a></p>
+        </form>}
+        @else{<form  #loginForm=ngForm (ngSubmit)="OnFormSubmit(loginForm)">
+          <div class="input-container">
+            <input type="text" id="name" name="name" #name="ngModel" ngModel required><label
+              for="name"
+              >name</label
+            >
+          </div>
+          <div class="input-container">
+            <input type="text" id="lastname" name="lastname" #lastname="ngModel" ngModel required><label
+              for="lastname"
+              >last name</label
+            >
+          </div>
+          <div class="input-container">
+            <input type="text" id="username" name="username" #username="ngModel" ngModel required><label
+              for="username"
+              >Username</label
+            >
+          </div>
+          <div class="input-container">
+            <input type="email" id="email" name="email" #email="ngModel" ngModel required><label
+              for="email"
+              >Email</label
+            >
+          </div>
+          <div class="input-container">
+            <input type="password" name="password" id="password" #password="ngModel" ngModel required /><label
+              for="password"
+              >Password</label
+            >
+          </div>
+          <div class="button-container"><button [disabled]="!loginForm.valid">SUBMIT</button></div>
+        </form>}
+        <p>Don't have an account? <a  (click)="onClick()">Sign up</a></p>
       </div>
 
     </div>

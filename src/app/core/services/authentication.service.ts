@@ -37,5 +37,9 @@ export class AuthenticationService {
     this.route.navigate(['/login'])
   }
 
+  signup(user:any){
+    return this.http.post("environment.apiUrl/users",user)
+  }
+
 
 }
