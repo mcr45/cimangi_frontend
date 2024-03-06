@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="right">
-      <div class="form-box">
+      <div class="form-box" [class.sign-up]="!toLog">
         <h1>{{toLog? 'LOGIN':'SIGNUP'}}</h1>
         @if (toLog) {
         <form  #loginForm=ngForm (ngSubmit)="OnFormSubmit(loginForm)">
@@ -26,32 +26,32 @@
           </div>
           <div class="button-container"><button [disabled]="!loginForm.valid">SUBMIT</button></div>
         </form>}
-        @else{<form  #loginForm=ngForm (ngSubmit)="OnFormSubmit(loginForm)">
-          <div class="input-container">
+        @else{<form  #loginForm=ngForm (ngSubmit)="OnFormSubmit(loginForm)" >
+          <div class="input-container input-container-signup">
             <input type="text" id="name" name="name" #name="ngModel" ngModel required><label
               for="name"
               >name</label
             >
           </div>
-          <div class="input-container">
+          <div class="input-container input-container-signup">
             <input type="text" id="lastname" name="lastname" #lastname="ngModel" ngModel required><label
               for="lastname"
               >last name</label
             >
           </div>
-          <div class="input-container">
+          <div class="input-container input-container-signup">
             <input type="text" id="username" name="username" #username="ngModel" ngModel required><label
               for="username"
               >Username</label
             >
           </div>
-          <div class="input-container">
+          <div class="input-container input-container-signup">
             <input type="email" id="email" name="email" #email="ngModel" ngModel required><label
               for="email"
               >Email</label
             >
           </div>
-          <div class="input-container">
+          <div class="input-container input-container-signup">
             <input type="password" name="password" id="password" #password="ngModel" ngModel required /><label
               for="password"
               >Password</label

@@ -18,11 +18,13 @@ createUser:{first_name:string;
 last_name:string;
 email:string;
 username:string;
-password:string}={first_name:'',
+password:string;
+password_confirmation:string}={first_name:'',
   last_name:'',
   email:'',
   username:'',
-  password:''}
+  password:'',
+password_confirmation:''}
 constructor(private authServ:AuthenticationService,private router:Router){}
 
   OnFormSubmit(form:NgForm){
@@ -42,8 +44,11 @@ constructor(private authServ:AuthenticationService,private router:Router){}
       this.createUser.email=form.value.email
       this.createUser.username=form.value.username
       this.createUser.password=form.value.password
+      this.createUser.password_confirmation=form.value.password
+
       console.log(this.createUser)
-      this.authServ.signup(this.createUser).subscribe({next:()=>{},error:(err)=>{}})
+      this.authServ.signup(this.createUser).subscribe({next:(res)=>{console.log(res)},
+      error:(err)=>{console.log(err)}})
     }
   }
   onClick(){

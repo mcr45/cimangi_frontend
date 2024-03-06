@@ -26,7 +26,10 @@ justify-content: center;
 align-items: center;
 
 }
-.img-box{width: 100%;height: 100%;}
+.img-box{width: 100%;
+  height: 100%;
+
+}
 .img-box img{
   max-width: 100%;
   height: 100%;
@@ -45,9 +48,28 @@ h1{
   justify-content: center;
   align-items: center;
   gap: 10%;
+  transition: height 0.15s ease-out;
+}
+.form-box.sign-up{
+  width: 525px;
+  height: 520px;
+  /* margin-top: -5%; */
+  margin-top: 0;
+  background-color: #5EBEC4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  padding: 125px;
+  transition: height 0.15s ease-in;
+
 }
 .input-container {position: relative;margin-bottom: 20px;
 }
+.input-container.input-container-signup{position: relative;
+  margin-bottom: 10px
+;}
 
 .input-container label{
   position: absolute;

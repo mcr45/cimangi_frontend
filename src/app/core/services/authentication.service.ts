@@ -38,7 +38,7 @@ export class AuthenticationService {
   }
 
   signup(user:any){
-    return this.http.post("environment.apiUrl/users",user)
+    return this.http.post(environment.apiUrl+'/users',user)
   }
 
 
