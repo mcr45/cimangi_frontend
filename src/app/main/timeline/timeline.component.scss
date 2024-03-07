@@ -29,11 +29,12 @@ html,body{height: 100vh;}
   flex-direction: column;
   gap: 10px;
 }
-.logo{
+.logo,.links>div{
   display: flex;
   gap: 15px;
 }
-
+.links>div .img-box{align-self: center;}
+.links>div .img-box img{filter:invert(48%) sepia(79%) saturate(5476%) hue-rotate(256deg) brightness(128%) contrast(919%)}
 .right{height: 100%;
 
 grid-column: 2;}
