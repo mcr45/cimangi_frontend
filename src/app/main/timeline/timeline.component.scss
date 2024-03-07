@@ -36,5 +36,32 @@ html,body{height: 100vh;}
 .links>div .img-box{align-self: center;}
 .links>div .img-box img{filter:invert(48%) sepia(79%) saturate(5476%) hue-rotate(256deg) brightness(128%) contrast(919%)}
 .right{height: 100%;
+background-color: #FDF5DF;
+grid-column: 2;
+display: flex;
+flex-direction: column;}
+.right-top{
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+.profile{display: flex; justify-content: space-between;}
+.profile-input{display: flex;}
+.profile-info{display: flex;gap: 10px;}
 
-grid-column: 2;}
+input{
+  border-radius: 25px;
+  background-color: rgb(204, 199, 199);
+  outline: none;
+  border: none;
+  padding: 5px;
+}
+#search{border:none;
+  background-color: inherit;
+  cursor: pointer;
+}
+profile-.img-box{
+  width: 20px;
+  height: auto;
+}
+.profile-img-box img{border-radius: 50%;height: 45px;width: 45px;}
