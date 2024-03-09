@@ -1,3 +1,4 @@
-body{
-  padding: 45px;
+.content{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(1fr,150px));
 }
