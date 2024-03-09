@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Post } from '../../shared/models/post';
 import { NgIf } from '@angular/common';
 import { PostService } from '../../core/services/post.service';
+import { PostComponent } from './post/post.component';
 
 @Component({
   selector: 'app-postlist',
   standalone: true,
-  imports: [],
+  imports: [PostComponent],
   templateUrl: './postlist.component.html',
   styleUrl: './postlist.component.scss'
 })
