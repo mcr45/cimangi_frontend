@@ -5,41 +5,39 @@ import { BehaviorSubject } from 'rxjs';
 import { environment } from '../../../environments/environment.development';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthenticationService {
-  private readonly tokenSubject=new BehaviorSubject<string|null>(null)
-  constructor(private http:HttpClient,private route:Router) { }
+  private readonly tokenSubject = new BehaviorSubject<string | null>(null);
+  constructor(private http: HttpClient, private route: Router) {}
 
-  logIn(username:string,password:string){
-   return this.http.post<{token:string}>(environment.logInUrl,{username,password})
-
+  logIn(username: string, password: string) {
+    return this.http.post<{ token: string }>(environment.logInUrl, {
+      username,
+      password,
+    });
   }
 
-  setToken(token:string){
-    localStorage.setItem('token',token)
-    this.tokenSubject.next(token)
+  setToken(token: string) {
+    localStorage.setItem('token', token);
+    this.tokenSubject.next(token);
   }
 
-  getToken(){
-    return localStorage.getItem('token')
+  getToken() {
+    return localStorage.getItem('token');
   }
 
-  isLoggedIn(){
-    return !!this.getToken()
+  isLoggedIn() {
+    return !!this.getToken();
   }
 
-
-
-  logout(){
-    localStorage.removeItem('token')
-    this.tokenSubject.next(null)
-    this.route.navigate(['/login'])
+  logout() {
+    localStorage.removeItem('token');
+    this.tokenSubject.next(null);
+    this.route.navigate(['/login']);
   }
 
-  signup(user:any){
-    return this.http.post(environment.apiUrl+'/users',user)
+  signup(user: any) {
+    return this.http.post(environment.apiUrl + '/users', user);
   }
-
-
 }

@@ -5,14 +5,12 @@ import { Post } from '../../shared/models/post';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PostService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http:HttpClient) { }
-
-  getPosts():Observable<Post[]>{
-    return this.http.get<Post[]>(`${environment.apiUrl}/posts`)
+  getPosts(): Observable<Post[]> {
+    return this.http.get<Post[]>(`${environment.apiUrl}/posts`);
   }
-
 }

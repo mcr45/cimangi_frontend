@@ -15,7 +15,7 @@ html,body{height: 100vh;}
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-columns: 25% 75%;
+  grid-template-columns: 20% 80%;
 }
 .left{
   height: 100%;
@@ -61,8 +61,10 @@ input{
   background-color: inherit;
   cursor: pointer;
 }
-profile-.img-box{
+.profile-.img-box{
   width: 20px;
   height: auto;
 }
 .profile-img-box img{border-radius: 50%;height: 45px;width: 45px;}
+
+.right-down{padding: 15px;}

@@ -2,67 +2,104 @@
   <div class="container">
     <div class="left">
       <div class="img-box">
-       @if (toLog) { <img src="/assets/img/cimangilo.jpeg" alt="" srcset="" />}
-       @else { <img src="/assets/img/grandmarobot.png" alt="" srcset="" />}
-
+        @if (toLog) { <img src="/assets/img/cimangilo.jpeg" alt="" srcset="" />}
+        @else { <img src="/assets/img/grandmarobot.png" alt="" srcset="" />}
       </div>
     </div>
     <div class="right">
       <div class="form-box" [class.sign-up]="!toLog">
-        <h1>{{toLog? 'LOGIN':'SIGNUP'}}</h1>
+        <h1>{{ toLog ? "LOGIN" : "SIGNUP" }}</h1>
         @if (toLog) {
-        <form  #loginForm=ngForm (ngSubmit)="OnFormSubmit(loginForm)">
+        <form #loginForm="ngForm" (ngSubmit)="OnFormSubmit(loginForm)">
           <div class="input-container">
-            <input type="text" id="username" name="username" #username="ngModel" ngModel required><label
-              for="username"
-              >Username</label
-            >
+            <input
+              type="text"
+              id="username"
+              name="username"
+              #username="ngModel"
+              ngModel
+              required
+            /><label for="username">Username</label>
           </div>
           <div class="input-container">
-            <input type="password" name="password" id="password" #password="ngModel" ngModel required /><label
-              for="password"
-              >Password</label
-            >
+            <input
+              type="password"
+              name="password"
+              id="password"
+              #password="ngModel"
+              ngModel
+              required
+            /><label for="password">Password</label>
           </div>
-          <div class="button-container"><button [disabled]="!loginForm.valid">SUBMIT</button></div>
-        </form>}
-        @else{<form  #loginForm=ngForm (ngSubmit)="OnFormSubmit(loginForm)" >
-          <div class="input-container input-container-signup">
-            <input type="text" id="name" name="name" #name="ngModel" ngModel required><label
-              for="name"
-              >name</label
-            >
+          <div class="button-container">
+            <button [disabled]="!loginForm.valid">SUBMIT</button>
           </div>
+        </form>
+        } @else{
+        <form #loginForm="ngForm" (ngSubmit)="OnFormSubmit(loginForm)">
           <div class="input-container input-container-signup">
-            <input type="text" id="lastname" name="lastname" #lastname="ngModel" ngModel required><label
-              for="lastname"
-              >last name</label
-            >
-          </div>
-          <div class="input-container input-container-signup">
-            <input type="text" id="username" name="username" #username="ngModel" ngModel required><label
-              for="username"
-              >Username</label
-            >
-          </div>
-          <div class="input-container input-container-signup">
-            <input type="email" id="email" name="email" #email="ngModel" ngModel required><label
-              for="email"
-              >Email</label
-            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              #name="ngModel"
+              ngModel
+              required
+            /><label for="name">name</label>
           </div>
           <div class="input-container input-container-signup">
-            <input type="password" name="password" id="password" #password="ngModel" ngModel required /><label
-              for="password"
-              >Password</label
-            >
+            <input
+              type="text"
+              id="lastname"
+              name="lastname"
+              #lastname="ngModel"
+              ngModel
+              required
+            /><label for="lastname">last name</label>
           </div>
-          <div class="button-container"><button [disabled]="!loginForm.valid">SUBMIT</button></div>
-        </form>}
-       @if (toLog) {<p>Don't have an account? <a class="signup" (click)="onClick()">Sign up</a></p>}
-        @else {<p>Have an account? <a  class="login" (click)="onClick()">Log in</a></p>}
+          <div class="input-container input-container-signup">
+            <input
+              type="text"
+              id="username"
+              name="username"
+              #username="ngModel"
+              ngModel
+              required
+            /><label for="username">Username</label>
+          </div>
+          <div class="input-container input-container-signup">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              #email="ngModel"
+              ngModel
+              required
+            /><label for="email">Email</label>
+          </div>
+          <div class="input-container input-container-signup">
+            <input
+              type="password"
+              name="password"
+              id="password"
+              #password="ngModel"
+              ngModel
+              required
+            /><label for="password">Password</label>
+          </div>
+          <div class="button-container">
+            <button [disabled]="!loginForm.valid">SUBMIT</button>
+          </div>
+        </form>
+        } @if (toLog) {
+        <p>
+          Don't have an account?
+          <a class="signup" (click)="onClick()">Sign up</a>
+        </p>
+        } @else {
+        <p>Have an account? <a class="login" (click)="onClick()">Log in</a></p>
+        }
       </div>
-
     </div>
   </div>
 </div>

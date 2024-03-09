@@ -1,48 +1,49 @@
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
-
-.main{height: 100vh;
-width: 100vw;
-overflow: hidden;}
-.container{
+.main {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+.container {
   height: 100%;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 2fr;
 }
 
-.left{
+.left {
   grid-column: 1;
   height: 100%;
 }
-.right{
+.right {
   grid-column: 2/3;
-height: 100%;
-background-color: #FDF5DF;
-display: flex;
-justify-content: center;
-align-items: center;
-
-}
-.img-box{width: 100%;
   height: 100%;
-
+  background-color: #fdf5df;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.img-box img{
+.img-box {
+  width: 100%;
+  height: 100%;
+}
+.img-box img {
   max-width: 100%;
   height: 100%;
-
 }
-h1{
-  color: #F92C85;
+h1 {
+  color: #f92c85;
 }
-.form-box{
-  width: 525px;  /* prima era 60 */
-  height: 420px;  /* prima era 70 */
+.form-box {
+  width: 525px; /* prima era 60 */
+  height: 420px; /* prima era 70 */
   margin-top: -10%;
-  background-color: #5EBEC4;
+  background-color: #5ebec4;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -50,12 +51,12 @@ h1{
   gap: 10%;
   transition: height 0.15s ease-out;
 }
-.form-box.sign-up{
+.form-box.sign-up {
   width: 525px;
   height: 520px;
   /* margin-top: -5%; */
   margin-top: 0;
-  background-color: #5EBEC4;
+  background-color: #5ebec4;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -63,53 +64,55 @@ h1{
   gap: 2px;
   padding: 125px;
   transition: height 0.15s ease-in;
-
 }
-.input-container {position: relative;margin-bottom: 20px;
+.input-container {
+  position: relative;
+  margin-bottom: 20px;
 }
-.input-container.input-container-signup{position: relative;
-  margin-bottom: 10px
-;}
+.input-container.input-container-signup {
+  position: relative;
+  margin-bottom: 10px;
+}
 
-.input-container label{
+.input-container label {
   position: absolute;
   left: 0px;
   top: 0px;
-  color: #F92C85;
+  color: #f92c85;
   pointer-events: none;
   transition: all 0.5s ease-in-out;
   font-size: 22px;
 }
 
-.input-container input{
-  border:0;
+.input-container input {
+  border: 0;
   border-bottom: pink solid 1px;
   background: transparent;
   margin-bottom: 35px;
   color: #ffffff;
 }
-.input-container input:focus{
+.input-container input:focus {
   border: none;
   outline: none;
   border-bottom: 1px solid rgb(250, 101, 126);
 }
 
-.input-container input:focus ~ label{
+.input-container input:focus ~ label {
   top: -20px;
   font-size: 15px;
 }
-.input-container input:valid ~ label{
+.input-container input:valid ~ label {
   top: -20px;
   font-size: 15px;
 }
-.button-container{
+.button-container {
   display: flex;
   justify-content: center;
 }
-.button-container button{
+.button-container button {
   border-radius: 25px;
-  background-color: #F92C85;
-  color: #5EBEC4;
+  background-color: #f92c85;
+  color: #5ebec4;
   outline: none;
   border: 0;
   cursor: pointer;
@@ -117,5 +120,9 @@ h1{
   padding: 10px;
 }
 
-p a.login {cursor: url(/assets/img/restaurant_menu.svg),auto;}
-p a.signup {cursor: url(/assets/img/lunch_dinings.svg),auto;}
+p a.login {
+  cursor: url(/assets/img/restaurant_menu.svg), auto;
+}
+p a.signup {
+  cursor: url(/assets/img/lunch_dinings.svg), auto;
+}

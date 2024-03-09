@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from '../../shared/models/post';
 import { PostService } from '../../core/services/post.service';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-timeline',
   standalone: true,
-  imports: [],
+  imports: [RouterOutlet],
   templateUrl: './timeline.component.html',
   styleUrl: './timeline.component.scss'
 })
