@@ -1,10 +1,12 @@
 <!-- <p>postlist works!</p> -->
 
-<div class="content">
+<div class="main">
+  <div class="content">
 
-@for (post of posts; track post.id) {
+  @for (post of posts; track post.id) {
 
-  <app-post></app-post>
-}
+    <app-post [post]="post"></app-post>
+  }
 
+  </div>
 </div>

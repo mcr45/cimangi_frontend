@@ -2,9 +2,10 @@ import { User } from "./user";
 
 export class Post {
   id!:number;
-  title:String;
-  body:String;
+  title:string;
+  body:string;
   likes:number;
+  /* comment:array of comment to be implemented */
   /* created_at:Date; */
   author?:User;
 
