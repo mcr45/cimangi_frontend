@@ -21,7 +21,7 @@ ngOnInit(): void {
     this.postserv.getPosts().subscribe(
      { next:(res)=>{this.posts=res,console.log(this.posts)},
       error:(err)=>{console.log(err)
-      this.error=err
+      this.error=err.message
       }}
     )
 }
