@@ -23,7 +23,7 @@
           <div class="img-box">
             <img src="/assets/icons/home.svg" alt="" srcset="" />
           </div>
-          <h5>HOME</h5>
+          <h5 routerLink="./">HOME</h5>
         </div>
         <div>
           <div class="img-box">
@@ -54,6 +54,7 @@
     <div class="right-top">
       <div class="profile">
         <div class="profile-input"><button id="search" type="submit"><img  src="/assets/icons/search.svg" alt="" srcset=""></button><input type="search" name="" id=""></div>
+        <div class="profile-buttons"><button id="new_post" routerLink="post">NEW POST</button><button id="new_recipe">NEW RECIPE</button></div>
         <div class="profile-info"><img src="/assets/icons/notifications.svg" alt=""><div class="profile-img-box"><img src="/assets/img/mario.jpg" alt=""></div>
         <p>Username</p></div>
       </div>
@@ -62,7 +63,8 @@
 
     <div class="right-down">
       <div class="header">
-        <h1>LATEST POSTS</h1>
+      @if (head==='/home' || head==='') { <h1>LATEST POSTS</h1>}
+      @else if (head==='/home/post') {<h1>CREATE A POST</h1>}
       </div>
       <router-outlet></router-outlet>
     </div>

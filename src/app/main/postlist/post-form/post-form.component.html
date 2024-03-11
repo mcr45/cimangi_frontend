@@ -1,0 +1,13 @@
+<!-- <p>post-form works!</p> -->
+<div class="main">
+  <div class="form-content">
+    <form id="postform" (ngSubmit)="onCreate(createPost)" #createPost="ngForm">
+      <label for="title">Title</label><input type="text" name="title" id="title" #formTitle ='ngModel' ngModel required/><label
+        for="body"
+      >Content</label
+      ><textarea name="body" id="body" cols="30" rows="10" #formBody='ngModel' ngModel  required placeholder="Be nice or be Pizza"></textarea>
+      <div class="form-button"><button type="submit">CREATE</button></div>
+    </form>
+    <h5 style="color: red;"><em>POST CONTENT MUST BE LONGER THAN 20 CHARACTERS BUT SHORTER THAN AN OLIVE GARDEN MENU</em></h5>
+  </div>
+</div>

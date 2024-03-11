@@ -1,7 +1,7 @@
 import { User } from "./user";
 
 export class Post {
-  id!:number;
+  id?:number;
   title:string;
   body:string;
   likes:number;
