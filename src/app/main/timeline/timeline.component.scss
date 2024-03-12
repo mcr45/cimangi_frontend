@@ -38,6 +38,10 @@ html,body{height: 100vh;}
 }
 .links>div .img-box{align-self: center;}
 .links>div .img-box img{filter:invert(48%) sepia(79%) saturate(5476%) hue-rotate(256deg) brightness(128%) contrast(919%)}
+.links h5:hover{border-bottom:solid #0f939c 1px;
+cursor: pointer;
+color: white;
+}
 .right{
   padding-left: 0%;//qui
   height: 130%;//qui
