@@ -11,7 +11,9 @@
 
 </div>
 <section class="comment">
-
+@for (comment of post.comments; track $index) {
+  {{comment.body}} by {{comment.user.username}}
+}
 
 </section>
 
