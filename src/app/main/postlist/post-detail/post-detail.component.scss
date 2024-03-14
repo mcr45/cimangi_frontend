@@ -1,0 +1,14 @@
+.main{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.post-content{
+  align-self: center;
+  width: 550px;
+  height: max-content;
+  border:  solid red 1px;
+  flex-direction: column;
+  display: flex;
+}
+.likes{display: flex;}

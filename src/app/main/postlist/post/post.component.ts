@@ -17,7 +17,7 @@ export class PostComponent {
 constructor(private route:Router){}
 
 onPostInfo(){
-this.route.navigate([`home/posts/:${this.post.id}/info`])
+this.route.navigate([`home/posts/${this.post.id}/info`])
 
 console.log('you call me')
 }
