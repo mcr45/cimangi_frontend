@@ -2,6 +2,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  gap: 15px;
 }
 .post-content{
   align-self: center;
@@ -12,3 +13,30 @@
   display: flex;
 }
 .likes{display: flex;}
+.comment{
+  flex:1;
+  padding: 10px;
+  width: 100%;
+  border-top: solid grey 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(8, 128, 128);
+  gap: 10px;
+}
+form{
+  display: flex;
+}
+textarea{
+  resize: none;
+  outline: none;
+  width: 450px;
+  height: 35px;
+}
+.comment-box{
+  background-color: aliceblue;
+  display: flex;
+  border-radius: 15px;
+  width: 100%;
+  height: fit-content;
+}

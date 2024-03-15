@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { PostService } from '../../../core/services/post.service';
 import { Post } from '../../../shared/models/post';
 import { ActivatedRoute } from '@angular/router';
+import { FormsModule, NgForm } from '@angular/forms';
 @Component({
   selector: 'app-post-detail',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './post-detail.component.html',
   styleUrl: './post-detail.component.scss'
 })
@@ -23,6 +24,8 @@ ngOnInit() {
 
 
 }
-
+onComment(form:NgForm){
+  console.log(form)
+}
 
 }
