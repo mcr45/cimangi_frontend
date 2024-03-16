@@ -8,10 +8,15 @@
   align-self: center;
   width: 550px;
   height: max-content;
-  border:  solid red 1px;
-  flex-direction: column;
+  border:  solid rgb(0, 255, 174) 1px;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
   display: flex;
+  flex-direction: column;
+  background-color: aliceblue;
+  padding: 15px;
 }
+#titolo{align-self: center;}
 .likes{display: flex;}
 .comment{
   flex:1;
@@ -39,4 +44,14 @@ textarea{
   border-radius: 15px;
   width: 100%;
   height: fit-content;
+  padding: 10px;
+  flex-direction: column;
+}
+.profile {
+
+ align-self:flex-start
+}
+.comment-area{
+
+align-self: center;
 }

@@ -1,8 +1,8 @@
 <div class="main">
 
 <div class="post-content">
-<h5>{{post.author?.username}}</h5>
-<h1>{{post.title}}</h1>
+<h5 >{{post.author?.username}}</h5>
+<h1 id="titolo">{{post.title}}</h1>
 <p>
   {{post.body}}
 </p>
@@ -20,7 +20,7 @@
 @for (comment of post.comments; track $index) {
 
   <div class="comment-box">
-    <div class="profile"><span>{{comment.user.username}}</span></div>
+    <div class="profile"><p>{{comment.user.username}}</p></div>
     <div class="comment-area"><p>{{comment.body}}</p></div>
   </div>
 }
