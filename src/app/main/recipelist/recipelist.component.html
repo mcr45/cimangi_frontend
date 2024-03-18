@@ -1,0 +1,16 @@
+
+<div class="main">
+  <div class="content">
+
+    @for (recipe of recipes; track recipe.id) {
+
+        <app-recipe [recipe]="recipe"></app-recipe>
+
+
+    }
+@empty {
+  <h1>NO RECIPES. PLEASE CHECK YOUR CONNECTION</h1>
+}
+
+  </div>
+</div>
