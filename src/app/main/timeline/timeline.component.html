@@ -65,6 +65,7 @@
       <div class="header">
       @if (head==='/home' || head==='') { <h1>LATEST POSTS</h1>}
       @else if (head==='/home/post') {<h1>CREATE A POST</h1>}
+      @else if(head==='home/recipes'){<h1>RECIPES</h1>>}
       </div>
       <router-outlet></router-outlet>
     </div>
