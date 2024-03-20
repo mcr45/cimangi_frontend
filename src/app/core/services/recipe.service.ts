@@ -14,4 +14,12 @@ getRecipes(){
  return this.http.get<Recipe>(`${environment.apiUrl}/recipes`)
 }
 
+
+
+getRecipe(id:number){
+  return this.http.get<Recipe>(`${environment.apiUrl}/recipes/${id}`)
+ }
+
+
+
 }

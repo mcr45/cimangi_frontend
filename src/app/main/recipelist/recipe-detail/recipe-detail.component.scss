@@ -1,0 +1,34 @@
+.main{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 15px;
+gap: 15px;
+}
+.recipe{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto;
+  border: solid red 1px;
+  gap:15px
+}
+.head{
+  border-top: solid 1px black;
+  grid-column: 1;
+  display: flex;
+  justify-content: space-around;
+  grid-row: 1;
+}
+
+.info{grid-column: 2;
+  grid-row: 1;
+  border-top: solid 1px black;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.body{
+  grid-column: 1;
+  grid-row: 2;
+}

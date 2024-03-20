@@ -1,12 +1,13 @@
 .main{
   display: flex;
 width: 100%;
+
 }
 
 .content{
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill,minmax(200px,250px));
-  gap: 10px;
+  gap: 50px;
   padding: 50px;
 }
