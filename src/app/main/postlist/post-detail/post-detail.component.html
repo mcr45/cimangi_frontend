@@ -1,33 +1,47 @@
 <div class="main">
+  <div class="post-content">
+    <h5>{{ post.author?.username }}</h5>
+    <h1 id="titolo">{{ post.title }}</h1>
+    <p>
+      {{ post.body }}
+    </p>
 
-<div class="post-content">
-<h5 >{{post.author?.username}}</h5>
-<h1 id="titolo">{{post.title}}</h1>
-<p>
-  {{post.body}}
-</p>
-
-<div class="likes"><span>{{post.likes}}</span><span><img src="/assets/icons/likes.svg" alt=""></span></div>
-
-</div>
-<section class="comment">
-  <p>COMMENT SECTION(WE DON'T HAVE THE RESOURCES TO HIRE A MODERATOR)</p>
-  <div class="comment-form">
-    <form action="" #comment_form="ngForm" (ngSubmit)="onComment(comment_form)">
-      <textarea maxlength="40" name="commentext" id="commentext" cols="30" rows="10" #commento='ngModel' ngModel placeholder="Leave a comment or share a spaghetti"></textarea>
-      <button type="submit">Send</button>
-    </form></div>
-@for (comment of post.comments; track $index) {
-
-  <div class="comment-box">
-    <div class="profile"><p>{{comment.user.username}}</p></div>
-    <div class="comment-area"><p>{{comment.body}}</p></div>
+    <div class="likes">
+      <span>{{ post.likes }}</span
+      ><span><img src="/assets/icons/likes.svg" alt="" /></span>
+    </div>
   </div>
-}
+  <section class="comment">
+    <p>COMMENT SECTION(WE DON'T HAVE THE RESOURCES TO HIRE A MODERATOR)</p>
+    <div class="comment-form">
+      <form
+        action=""
+        #comment_form="ngForm"
+        (ngSubmit)="onComment(comment_form)"
+      >
+        <textarea
+          maxlength="40"
+          name="commentext"
+          id="commentext"
+          cols="30"
+          rows="10"
+          #commento="ngModel"
+          ngModel
+          placeholder="Leave a comment or share a spaghetti"
+        ></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+    @for (comment of post.comments; track $index) {
 
-</section>
-
-
-
-
+    <div class="comment-box">
+      <div class="profile">
+        <p>{{ comment.user.username }}</p>
+      </div>
+      <div class="comment-area">
+        <p>{{ comment.body }}</p>
+      </div>
+    </div>
+    }
+  </section>
 </div>

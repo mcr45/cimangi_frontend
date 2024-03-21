@@ -1,16 +1,57 @@
 <div class="main">
+  <div class="recipe">
+    <div class="left">
+      <div class="head">
+        <h1>{{ recipe.title }}</h1>
+        <p>{{ recipe.category }}</p>
+      </div>
+      <div class="recipe-img">
+        <img src="/assets/img/{{ recipe.category }}.jpg" alt="" />
+      </div>
+      <div class="body">{{ recipe.body }}</div>
+    </div>
 
-<div class="recipe">
-  <div class="head">{{recipe.title}}{{recipe.category}}</div>
-  <div class="info"><p>{{recipe.author!.username}}</p>
-  <div class="profile-img"><img src="" alt="" srcset=""></div>
+    <div class="right">
+      <div class="info">
+        <p>{{ recipe.author!.username }}</p>
+        <div class="profile-img">
+          <img src="/assets/img/mario.jpg" alt="" srcset="" />
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="body">{{recipe.body}}</div>
-</div>
 
+  <section class="comment">
+    <p>COMMENT SECTION(WE DON'T HAVE THE RESOURCES TO HIRE A MODERATOR)</p>
+    <div class="comment-form">
+      <form
+        action=""
+        #comment_form="ngForm"
+        (ngSubmit)="onComment(comment_form)"
+      >
+        <textarea
+          maxlength="40"
+          name="commentext"
+          id="commentext"
+          cols="30"
+          rows="10"
+          #commento="ngModel"
+          ngModel
+          placeholder="Leave a comment or share a spaghetti"
+        ></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+    @for (comment of recipe.comments; track $index) {
 
-<section class="comment-section"></section>
-
-
-
+    <div class="comment-box">
+      <div class="profile">
+        <p>{{ comment.user.username }}</p>
+      </div>
+      <div class="comment-area">
+        <p>{{ comment.body }}</p>
+      </div>
+    </div>
+    }
+  </section>
 </div>

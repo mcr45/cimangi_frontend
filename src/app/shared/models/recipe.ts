@@ -6,7 +6,7 @@ title:string;
 body:string;
 category:string;
 author:User;
-comments?:Comment
+comments?:Comment[]
 
 constructor(recipe:any){
 this.id
