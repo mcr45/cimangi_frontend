@@ -1,10 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { Recipe } from '../../../shared/models/recipe';
 import { Route, Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-recipe',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './recipe.component.html',
   styleUrl: './recipe.component.scss'
 })

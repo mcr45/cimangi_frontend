@@ -7,6 +7,7 @@ import { PostAllComponent } from './main/postlist/post-all/post-all.component';
 import { PostDetailComponent } from './main/postlist/post-detail/post-detail.component';
 import { RecipelistComponent } from './main/recipelist/recipelist.component';
 import { RecipeDetailComponent } from './main/recipelist/recipe-detail/recipe-detail.component';
+import { RecipeFormComponent } from './main/recipelist/recipe-form/recipe-form.component';
 export const routes: Routes = [
   {path:'',pathMatch:"full",
   loadComponent:()=>import('./features/authentication/authentication.component').then((a)=>a.AuthenticationComponent)
@@ -18,6 +19,7 @@ loadComponent:()=>import('./main/timeline/timeline.component').then((c)=>c.Timel
 {path:'posts',loadComponent:()=>import('./main/postlist/post-all/post-all.component').then((l)=>l.PostAllComponent)},
 {path:'posts/:id/info',loadComponent:()=>import('./main/postlist/post-detail/post-detail.component').then((dimmi)=>dimmi.PostDetailComponent)
   ,pathMatch:'full'},
+  {path:'recipe',loadComponent:()=>import('./main/recipelist/recipe-form/recipe-form.component').then((pappa)=>pappa.RecipeFormComponent)},
   {path:'recipes',loadComponent:()=>import('./main/recipelist/recipelist.component').then((r)=>r.RecipelistComponent)},
   {path:'recipes/:id/info',loadComponent:()=>import('./main/recipelist/recipe-detail/recipe-detail.component').then((cook)=>cook.RecipeDetailComponent)}
 ]
