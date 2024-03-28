@@ -8,21 +8,22 @@ import { PostService } from '../../../core/services/post.service';
   standalone: true,
   imports: [PostComponent],
   templateUrl: './post-all.component.html',
-  styleUrl: './post-all.component.scss'
+  styleUrl: './post-all.component.scss',
 })
 export class PostAllComponent implements OnInit {
-  posts:Post[]=[]
-  error:string=''
+  posts: Post[] = [];
+  error: string = '';
 
-  constructor(private postserv:PostService){}
-ngOnInit(): void {
-    this.postserv.getPosts().subscribe(
-     { next:(res)=>{this.posts=res,console.log(this.posts)},
-      error:(err)=>{console.log(err)
-      this.error=err.message
-      }}
-    )
-}
-
-
+  constructor(private postserv: PostService) {}
+  ngOnInit(): void {
+    this.postserv.getPosts().subscribe({
+      next: (res) => {
+        (this.posts = res), console.log(this.posts);
+      },
+      error: (err) => {
+        console.log(err);
+        this.error = err.message;
+      },
+    });
+  }
 }

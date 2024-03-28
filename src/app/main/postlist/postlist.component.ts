@@ -9,21 +9,22 @@ import { PostComponent } from './post/post.component';
   standalone: true,
   imports: [PostComponent],
   templateUrl: './postlist.component.html',
-  styleUrl: './postlist.component.scss'
+  styleUrl: './postlist.component.scss',
 })
-export class PostlistComponent implements OnInit{
+export class PostlistComponent implements OnInit {
+  posts: Post[] = [];
+  error: string = '';
 
-posts:Post[]=[]
-error:string=''
-
-constructor(private postserv:PostService){}
-ngOnInit(): void {
-    this.postserv.getPosts().subscribe(
-     { next:(res)=>{this.posts=res,console.log(this.posts)},
-      error:(err)=>{console.log(err)
-      this.error=err.message
-      }}
-    )
-}
-
+  constructor(private postserv: PostService) {}
+  ngOnInit(): void {
+    this.postserv.getPosts().subscribe({
+      next: (res) => {
+        (this.posts = res), console.log(this.posts);
+      },
+      error: (err) => {
+        console.log(err);
+        this.error = err.message;
+      },
+    });
+  }
 }

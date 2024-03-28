@@ -6,13 +6,7 @@
     <div class="container">
       <form #recipeForm="ngForm" (ngSubmit)="onCreateForm(recipeForm)">
         <label for="category">choose a category</label>
-        <select
-          name="category"
-          id="category"
-          #categoryRef="ngModel"
-          ngModel
-          required
-        >
+        <select name="category" id="category" #categoryRef="ngModel" ngModel required>
           <option value="" disabled>category</option>
           <option value="vegan" selected="true">Vegan</option>
           <option value="meal">Meal</option>
@@ -21,7 +15,7 @@
           <option value="soup">Soup</option>
         </select>
         <label for="title">title</label>
-        <input type="text" name="title" id="title" #title="ngModel" ngModel required/>
+        <input type="text" name="title" id="title" #title="ngModel" ngModel required />
         <textarea name="cook" id="cook" #cook="ngModel" ngModel required></textarea>
         <button type="submit" [disabled]="!recipeForm.valid">CREATE</button>
       </form>

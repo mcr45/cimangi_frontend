@@ -13,15 +13,11 @@ export class PostService {
   getPosts(): Observable<Post[]> {
     return this.http.get<Post[]>(`${environment.apiUrl}/posts`);
   }
-  createPost(post:Post){
-    return this.http.post(`${environment.apiUrl}/posts`,post)
-
+  createPost(post: Post) {
+    return this.http.post(`${environment.apiUrl}/posts`, post);
   }
 
-  getPost(id:number){
-   return this.http.get<Post>(`${environment.apiUrl}/posts/${id}`)
+  getPost(id: number) {
+    return this.http.get<Post>(`${environment.apiUrl}/posts/${id}`);
   }
-
-
-
 }

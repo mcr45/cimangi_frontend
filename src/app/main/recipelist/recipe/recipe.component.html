@@ -3,7 +3,8 @@
   {{recipe.body}}
   {{recipe.category}}
   {{recipe.title}}
-</p> -->  <!-- 'vegan','meal','romantic_dinner','pizza','soup' -->
+</p> -->
+<!-- 'vegan','meal','romantic_dinner','pizza','soup' -->
 <!-- <div class="card">
 <div class="head"><div class="author">{{recipe.author.username}}</div>
 <div class="title"> {{recipe.title}}</div><div class="category">{{recipe.category}}</div></div>
@@ -21,20 +22,11 @@
 
 </div> -->
 
-
-<div class="card" style="background-image:url('assets/img/{{recipe.category}}.jpg')">
-
-
-<div class="head" (click)="onRecipe()">{{recipe.title}}{{recipe.author?.username}}</div>
-
-
-
-
-
+<div
+  class="card"
+  style="background-image:url('assets/img/{{ recipe.category }}.jpg')"
+>
+  <div class="head" (click)="onRecipe()">
+    {{ recipe.title }}{{ recipe.author?.username }}
+  </div>
 </div>
-
-
-
-
-
-

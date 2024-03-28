@@ -3,25 +3,20 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment.development';
 import { Recipe } from '../../shared/models/recipe';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class RecipeService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http:HttpClient) { }
+  getRecipes() {
+    return this.http.get<Recipe>(`${environment.apiUrl}/recipes`);
+  }
 
-getRecipes(){
+  getRecipe(id: number) {
+    return this.http.get<Recipe>(`${environment.apiUrl}/recipes/${id}`);
+  }
 
- return this.http.get<Recipe>(`${environment.apiUrl}/recipes`)
-}
-
-
-
-getRecipe(id:number){
-  return this.http.get<Recipe>(`${environment.apiUrl}/recipes/${id}`)
- }
-
-createRecipe(recipe:Recipe){
-  return this.http.post(`${environment.apiUrl}/recipes`,recipe)
-}
-
+  createRecipe(recipe: Recipe) {
+    return this.http.post(`${environment.apiUrl}/recipes`, recipe);
+  }
 }

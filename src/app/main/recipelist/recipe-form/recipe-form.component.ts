@@ -9,27 +9,31 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [FormsModule],
   templateUrl: './recipe-form.component.html',
-  styleUrl: './recipe-form.component.scss'
+  styleUrl: './recipe-form.component.scss',
 })
 export class RecipeFormComponent {
-recipe!:Recipe
+  recipe!: Recipe;
 
-constructor(private rs:RecipeService,private route:Router){}
+  constructor(private rs: RecipeService, private route: Router) {}
 
-onCreateForm(form:NgForm){
-  console.log('ci sono')
-  console.log(form)
-  if(form.valid){
-
-    this.recipe={title:form.value.title,category:form.value.category,body:form.value.cook}
-    this.rs.createRecipe(this.recipe).subscribe({
-      next:(res)=>{console.log(res),this.route.navigate(['home/'])},
-       error:(err)=>{console.log(err)}
-
-    })
-    form.reset()
+  onCreateForm(form: NgForm) {
+    console.log('ci sono');
+    console.log(form);
+    if (form.valid) {
+      this.recipe = {
+        title: form.value.title,
+        category: form.value.category,
+        body: form.value.cook,
+      };
+      this.rs.createRecipe(this.recipe).subscribe({
+        next: (res) => {
+          console.log(res), this.route.navigate(['home/']);
+        },
+        error: (err) => {
+          console.log(err);
+        },
+      });
+      form.reset();
+    }
   }
-}
-
-
 }

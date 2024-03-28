@@ -32,8 +32,8 @@ export class TimelineComponent implements OnInit {
   ngOnInit(): void {
     /*  this.ps.getPosts().subscribe({next:(res)=>{this.posts=res},error:(err)=>{this.errMsg=err,console.log(err)}})
   this.route.queryParams.subscribe((res)=>console.log(res)) */
-  this.route.events.subscribe((event:any) => {       event instanceof NavigationEnd ? this.head=event.url: null     })
-
-
+    this.route.events.subscribe((event: any) => {
+      event instanceof NavigationEnd ? (this.head = event.url) : null;
+    });
   }
 }

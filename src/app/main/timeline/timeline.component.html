@@ -50,27 +50,38 @@
   </div>
 
   <div class="right">
-
     <div class="right-top">
       <div class="profile">
-        <div class="profile-input"><button id="search" type="submit"><img  src="/assets/icons/search.svg" alt="" srcset=""></button><input type="search" name="" id=""></div>
-        <div class="profile-buttons"><button id="new_post" routerLink="post">NEW POST</button><button routerLink="recipe" id="new_recipe">NEW RECIPE</button></div>
-        <div class="profile-info"><img src="/assets/icons/notifications.svg" alt=""><div class="profile-img-box"><img src="/assets/img/mario.jpg" alt=""></div>
-        <p>Username</p></div>
+        <div class="profile-input">
+          <button id="search" type="submit">
+            <img src="/assets/icons/search.svg" alt="" srcset="" /></button
+          ><input type="search" name="" id="" />
+        </div>
+        <div class="profile-buttons">
+          <button id="new_post" routerLink="post">NEW POST</button
+          ><button routerLink="recipe" id="new_recipe">NEW RECIPE</button>
+        </div>
+        <div class="profile-info">
+          <img src="/assets/icons/notifications.svg" alt="" />
+          <div class="profile-img-box">
+            <img src="/assets/img/mario.jpg" alt="" />
+          </div>
+          <p>Username</p>
+        </div>
       </div>
-
     </div>
 
     <div class="right-down">
       <div class="header">
-      @if (head==='/home' || head==='') { <h1>LATEST POSTS</h1>}
-      @else if (head==='/home/post') {<h1>CREATE A POST</h1>}
-      @else if(head==='home/recipes'){<h1>RECIPES</h1>>}
+        @if (head==='/home' || head==='') {
+        <h1>LATEST POSTS</h1>
+        } @else if (head==='/home/post') {
+        <h1>CREATE A POST</h1>
+        } @else if(head==='home/recipes'){
+        <h1>RECIPES</h1>
+        >}
       </div>
       <router-outlet></router-outlet>
     </div>
   </div>
-
-
-
 </div>

@@ -6,20 +6,18 @@ import { Router, RouterLink } from '@angular/router';
 @Component({
   selector: 'app-post',
   standalone: true,
-  imports: [SlicePipe,RouterLink],
+  imports: [SlicePipe, RouterLink],
   templateUrl: './post.component.html',
-  styleUrl: './post.component.scss'
+  styleUrl: './post.component.scss',
 })
 export class PostComponent {
+  @Input() post!: Post;
 
-@Input()post!:Post
+  constructor(private route: Router) {}
 
-constructor(private route:Router){}
+  onPostInfo() {
+    this.route.navigate([`home/posts/${this.post.id}/info`]);
 
-onPostInfo(){
-this.route.navigate([`home/posts/${this.post.id}/info`])
-
-console.log('you call me')
-}
-
+    console.log('you call me');
+  }
 }
