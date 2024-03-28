@@ -20,6 +20,8 @@ getRecipe(id:number){
   return this.http.get<Recipe>(`${environment.apiUrl}/recipes/${id}`)
  }
 
-
+createRecipe(recipe:Recipe){
+  return this.http.post(`${environment.apiUrl}/recipes`,recipe)
+}
 
 }

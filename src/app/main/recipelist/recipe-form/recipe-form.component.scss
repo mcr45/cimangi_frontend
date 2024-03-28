@@ -10,8 +10,24 @@ main{
 .header{
   align-self: flex-start;
 }
+.header h1{
+  background: -webkit-linear-gradient(270deg, #b28ff9, #031551);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
 .body{
   align-self: center;
+}
+.container{
+  height:790px;
+  width: 800;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url('/assets/img/page.jpg');
+  background-size: cover;
+  padding: 20px;
 }
 form{
   display: flex;
@@ -23,4 +39,34 @@ form{
   resize: none;
   flex: 1;
   outline: none;
+}
+button{
+  background-color: initial;
+    background-image: linear-gradient(-180deg, #f597b9, #a06393);
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+    color: #FFFFFF;
+    cursor: pointer;
+    height: 40px;
+    line-height: 40px;
+    outline: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    pointer-events: auto;
+    position: relative;
+    text-align: center;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: top;
+    white-space: nowrap;
+    width: 100%;
+    z-index: 9;
+    border: 0;
+    transition: box-shadow 0.2s;
+    width: fit-content;
+    align-self: center;
+}
+label{
+  color: #FFFFFF;
 }
