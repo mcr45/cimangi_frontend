@@ -28,12 +28,16 @@ main{
   background-image: url('/assets/img/page.jpg');
   background-size: cover;
   padding: 20px;
+  margin-top: 65px;
 }
 form{
+  margin-top: 90px;
   display: flex;
   flex-direction: column;
   height: 500px;
   width: 600px;
+  opacity: 0.6;
+  gap: 20px;
 }
 #cook{
   resize: none;
@@ -69,4 +73,13 @@ button{
 }
 label{
   color: #FFFFFF;
+}
+select{
+  background-color: bisque;
+}
+::placeholder{
+  color: hsl(279, 100%, 66%);
+}
+#cook{
+  background-image: url('/assets/img/whitepage.png');
 }
