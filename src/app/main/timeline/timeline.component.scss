@@ -14,17 +14,19 @@ html,body{height: 100vh;}
 .container{
   height: 100vh;//qui
   width: 100%;
-  display: grid;
-  grid-template-columns: 20% 80%;//qui
+ /*  display: grid;
+  grid-template-columns: 20% 80%; *///qui
+  display: flex;
   gap: 0px;
 }
 .left{
   height: 100vh;//qui
   padding: 25px;
   position: fixed;//questo
-  background-color: #5EBEC4;
+  background-color: #5B84B1FF;
   grid-column: 1;
-
+  width: 250px;
+  color: white;
 }
 .menu{
   height: 100%;
@@ -37,12 +39,16 @@ html,body{height: 100vh;}
   gap: 15px;
 }
 .links>div .img-box{align-self: center;}
-.links>div .img-box img{filter:invert(48%) sepia(79%) saturate(5476%) hue-rotate(256deg) brightness(128%) contrast(919%)}
-.links h5:hover{border-bottom:solid #0f939c 1px;
+.links>div .img-box img{/* filter:invert(48%) sepia(79%) saturate(5476%) hue-rotate(256deg) brightness(128%) contrast(919%) */
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(328deg) brightness(103%) contrast(101%);
+}
+.links h5:hover{border-bottom:solid #2508e3 1px;
 cursor: pointer;
 color: white;
 }
 .right{
+  width: 100%;
+  margin-left: 250px;
   padding-left: 0%;//qui
   height: 130%;//qui
 grid-column: 2;
@@ -53,7 +59,7 @@ flex-direction: column;}
   flex-direction: column;
   padding: 25px;
   box-shadow: 0px 2px 3px 1px rgba(20,20,20,0.4);
-  background-color: #FDF5DF
+  background-color:  #FC766AFF
 }
 .profile{display: flex; justify-content: space-between;}
 .profile-input{display: flex;}
