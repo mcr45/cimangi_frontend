@@ -3,10 +3,33 @@
 *:after {
   box-sizing: border-box;
 }
+.page{
+  height: 150vh;
 
+  /* width: 100vw; */
+}
+#first{
+  font-family: 'Kreon';
+}
+#second{
+  font-family: 'Rubik';
+}
+#third{font-family: 'Caveat';}
+#first,#second{
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.up,.middle,.down{height: 30%;}
+#first .up{align-self: center;}
+#first .down{align-self: flex-end;}
+#second .up{align-self: flex-end;}
+#second .middle{align-self: center;}
+.motto{display: flex;
+flex-direction: column;}
 .main {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
 }
 .container {
@@ -35,6 +58,7 @@
 .img-box img {
   max-width: 100%;
   height: 100%;
+  object-fit: fill;
 }
 h1 {
   color: #f92c85;
@@ -125,4 +149,57 @@ p a.login {
 }
 p a.signup {
   cursor: url(/assets/img/lunch_dinings.svg), auto;
+}
+
+
+
+#first .middle h2{
+
+position: relative;
+
+animation-name: ltr;
+animation-duration: 7s;
+
+}
+#second .down .motto{
+
+  position: relative;
+
+  animation-name: ltr;
+  animation-duration: 10s;
+  animation-delay: 0.5s;
+  }
+#first .down p{
+  position: relative;
+animation-name: rtl;
+animation-duration: 4s;
+}
+#second .middle p{
+  position: relative;
+animation-name: rtl;
+animation-duration: 13s;
+animation-delay: 0.5s;
+}
+
+
+
+
+
+
+
+
+
+@keyframes ltr {
+  0%   {left: -149%;}
+  25%  {left:-100%}
+  50%  {left:-50%}
+  75%  {left:25%}
+  100% {left:0}
+}
+@keyframes rtl {
+  0%   {right: -160%;}
+
+  50%  {right:35%}
+
+  100% {right:0}
 }
