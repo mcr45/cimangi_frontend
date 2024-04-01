@@ -16,7 +16,7 @@
         </select>
         <!-- <label for="title">title</label> -->
         <input type="text" name="title" id="title" #title="ngModel" ngModel  placeholder="TITLE"  required  />
-        <textarea name="cook" id="cook" #cook="ngModel" ngModel required></textarea>
+        <textarea name="cook" id="cook" #cook="ngModel" ngModel required autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
         <button type="submit" [disabled]="!recipeForm.valid">CREATE</button>
       </form>
     </div>

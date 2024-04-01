@@ -6,14 +6,13 @@ main{
   height: 100%;
   flex-direction: column;
   padding: 15px;
+  font-family: "Rubik";
 }
 .header{
   align-self: flex-start;
 }
 .header h1{
-  background: -webkit-linear-gradient(270deg, #b28ff9, #031551);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #fc766a;
 
 }
 .body{
@@ -45,10 +44,10 @@ form{
   outline: none;
 }
 button{
-  background-color: initial;
-    background-image: linear-gradient(-180deg, #f597b9, #a06393);
+  background-color: #fc766a;
+   /*  background-image: linear-gradient(-180deg, #f597b9, #a06393); */
     border-radius: 6px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+    box-shadow: rgba(236, 9, 9, 0.1) 0 2px 4px;
     color: #FFFFFF;
     cursor: pointer;
     height: 40px;
@@ -80,6 +79,7 @@ select{
 ::placeholder{
   color: hsl(279, 100%, 66%);
 }
-#cook{
-  background-image: url('/assets/img/whitepage.png');
-}
+/* #cook{
+  background-image: url('/assets/img/whitepaper.jpg');
+  background-position: right 0px top -90px;
+} */
