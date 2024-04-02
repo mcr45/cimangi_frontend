@@ -17,10 +17,23 @@ recipe!:Recipe
 
 constructor(private rs:RecipeService){}
 
-ngOnInit(): void {
-  this.rs.getRecipes().subscribe(({next:(res:any)=>{this.recipes=res},
+ngOnInit(){
+ /*  this.rs.getRecipes().subscribe(({next:(res:any)=>{this.recipes=res},
   error:(err)=>{console.log(err)}}))
   this.recipe=this.recipes[this.recipes.length-1]
+  console.log(this.recipe) */
+  this.rs.getRecipes().subscribe({
+    next: (res: any) => {
+      console.log(res), (this.recipes = res);
+      this.recipe=this.recipes[0]
+  console.log(this.recipe)
+    },
+    error: (err) => {
+      console.log(err);
+    },
+  });
+
+
 }
 
 
