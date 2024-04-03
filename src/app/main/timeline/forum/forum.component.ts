@@ -3,10 +3,12 @@ import { PostComponent } from '../../postlist/post/post.component';
 import { RecipeComponent } from '../../recipelist/recipe/recipe.component';
 import { Recipe } from '../../../shared/models/recipe';
 import { RecipeService } from '../../../core/services/recipe.service';
+import { PostService } from '../../../core/services/post.service';
+import { Post } from '../../../shared/models/post';
 @Component({
   selector: 'app-forum',
   standalone: true,
-  imports: [RecipeComponent],
+  imports: [RecipeComponent,PostComponent],
   templateUrl: './forum.component.html',
   styleUrl: './forum.component.scss'
 })
@@ -14,8 +16,8 @@ export class ForumComponent implements OnInit{
 
 recipes!:Recipe[]
 recipe!:Recipe
-
-constructor(private rs:RecipeService){}
+post!:Post
+constructor(private rs:RecipeService,private ps:PostService){}
 
 ngOnInit(){
  /*  this.rs.getRecipes().subscribe(({next:(res:any)=>{this.recipes=res},
@@ -32,6 +34,12 @@ ngOnInit(){
       console.log(err);
     },
   });
+
+  this.ps.getBestPost().subscribe({
+    next:(res)=>{this.post=res},
+    error:(err)=>{console.log(err)}
+  })
+
 
 
 }
