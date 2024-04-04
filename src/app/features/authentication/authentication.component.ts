@@ -40,7 +40,7 @@ export class AuthenticationComponent {
       this.authServ.logIn(form.value.username, form.value.password).subscribe({
         next: (res: any) => {
           console.log(res.token);
-          this.authServ.setToken(res.token), this.router.navigate(['home']);
+          this.authServ.setToken(res.token), this.router.navigate(['/home']);
         },
         error: (error: any) => {
           this.errorMsg = error;
@@ -58,8 +58,10 @@ export class AuthenticationComponent {
 
       console.log(this.createUser);
       this.authServ.signup(this.createUser).subscribe({
-        next: (res) => {
+        next: (res:any) => {
           console.log(res);
+          this.authServ.setToken(res.token),
+          this.router.navigate(['/home']);
         },
         error: (err) => {
           console.log(err);

@@ -45,7 +45,11 @@
         </div>
       </div>
 
-      <div class="settings"></div>
+      @if(logged){<div class="settings">
+        <img src="/assets/icons/logout.svg" alt="" srcset="" />
+        <h5 (click)="logOut()">LOG OUT</h5>
+      </div>}
+
     </div>
   </div>
 

@@ -34,6 +34,12 @@ html,body{height: 100vh;}
   flex-direction: column;
   gap: 10px;
 }
+.settings{
+  display: flex;
+  color: white;
+  justify-self: end;
+  cursor: pointer;
+}
 .logo,.links>div{
   display: flex;
   gap: 15px;
@@ -42,7 +48,7 @@ html,body{height: 100vh;}
 .links>div .img-box img{/* filter:invert(48%) sepia(79%) saturate(5476%) hue-rotate(256deg) brightness(128%) contrast(919%) */
   filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(328deg) brightness(103%) contrast(101%);
 }
-.links h5:hover{border-bottom:solid #2508e3 1px;
+.links h5:hover,.settings h5:hover{border-bottom:solid #2508e3 1px;
 cursor: pointer;
 color: white;
 }

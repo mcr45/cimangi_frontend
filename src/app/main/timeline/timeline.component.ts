@@ -9,6 +9,7 @@ import {
   RouterLink,
   RouterOutlet,
 } from '@angular/router';
+import { AuthenticationService } from '../../core/services/authentication.service';
 
 @Component({
   selector: 'app-timeline',
@@ -23,17 +24,27 @@ export class TimelineComponent implements OnInit {
 ] */
   posts: Post[] = [];
   constructor(
+    private as:AuthenticationService,
     private ps: PostService,
     private routex: ActivatedRoute,
     private route: Router
   ) {}
   errMsg: String = '';
   head: string = '';
+  logged:boolean=false
   ngOnInit(): void {
     /*  this.ps.getPosts().subscribe({next:(res)=>{this.posts=res},error:(err)=>{this.errMsg=err,console.log(err)}})
   this.route.queryParams.subscribe((res)=>console.log(res)) */
     this.route.events.subscribe((event: any) => {
       event instanceof NavigationEnd ? (this.head = event.url) : null;
     });
+    this.logged=this.as.isLoggedIn()
   }
+
+
+  logOut(){
+    this.as.logout()
+  }
+
+
 }
