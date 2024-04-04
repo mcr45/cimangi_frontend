@@ -13,7 +13,7 @@ export const routes: Routes = [
 
   {path:'',pathMatch:"full",
   loadComponent:()=>import('./features/authentication/authentication.component').then((a)=>a.AuthenticationComponent)
-  },
+  },{path:'login',redirectTo:''},
   {path:'home',
 loadComponent:()=>import('./main/timeline/timeline.component').then((c)=>c.TimelineComponent),children:[
   {path:'',loadComponent:()=>import('./main/timeline/forum/forum.component').then((ff)=>ff.ForumComponent)},
