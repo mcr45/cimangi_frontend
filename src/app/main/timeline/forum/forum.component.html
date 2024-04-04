@@ -32,7 +32,11 @@
 <div class="post-title">
   <h1>MOST LIKED POST by the Comunity</h1>
 </div>
-<app-post [post]="post"></app-post>
+@if (post) {<app-post [post]="post"></app-post>}
+@else {<div>
+
+  <h2>No Post,please try again</h2>
+</div>}
 
 </div>
 

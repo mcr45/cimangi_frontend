@@ -16,9 +16,9 @@ export const routes: Routes = [
   },
   {path:'home',
 loadComponent:()=>import('./main/timeline/timeline.component').then((c)=>c.TimelineComponent),children:[
-  {path:'forum',loadComponent:()=>import('./main/timeline/forum/forum.component').then((ff)=>ff.ForumComponent)},
- { path:'',loadComponent:()=>import('./main/postlist/postlist.component').then((d)=>d.PostlistComponent)
-},{path:'post',loadComponent:()=>import('./main/postlist/post-form/post-form.component').then((e=>e.PostFormComponent))},
+  {path:'',loadComponent:()=>import('./main/timeline/forum/forum.component').then((ff)=>ff.ForumComponent)},
+ /* { path:'',loadComponent:()=>import('./main/postlist/postlist.component').then((d)=>d.PostlistComponent)
+}, */{path:'post',loadComponent:()=>import('./main/postlist/post-form/post-form.component').then((e=>e.PostFormComponent))},
 {path:'posts',loadComponent:()=>import('./main/postlist/post-all/post-all.component').then((l)=>l.PostAllComponent)},
 {path:'posts/:id/info',loadComponent:()=>import('./main/postlist/post-detail/post-detail.component').then((dimmi)=>dimmi.PostDetailComponent)
   ,pathMatch:'full'},
