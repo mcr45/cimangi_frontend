@@ -10,10 +10,11 @@ import { RecipeDetailComponent } from './main/recipelist/recipe-detail/recipe-de
 import { RecipeFormComponent } from './main/recipelist/recipe-form/recipe-form.component';
 import { ForumComponent } from './main/timeline/forum/forum.component';
 import { authGuard } from './auth.guard';
+import { nonAuthGuard } from './non-auth.guard';
 export const routes: Routes = [
 
   {path:'',pathMatch:"full",
-  loadComponent:()=>import('./features/authentication/authentication.component').then((a)=>a.AuthenticationComponent)
+  loadComponent:()=>import('./features/authentication/authentication.component').then((a)=>a.AuthenticationComponent),canActivate:[nonAuthGuard]
   },{path:'login',redirectTo:''},
   {path:'home',
 loadComponent:()=>import('./main/timeline/timeline.component').then((c)=>c.TimelineComponent),canActivate:[authGuard],children:[
