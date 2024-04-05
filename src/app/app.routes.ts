@@ -9,13 +9,14 @@ import { RecipelistComponent } from './main/recipelist/recipelist.component';
 import { RecipeDetailComponent } from './main/recipelist/recipe-detail/recipe-detail.component';
 import { RecipeFormComponent } from './main/recipelist/recipe-form/recipe-form.component';
 import { ForumComponent } from './main/timeline/forum/forum.component';
+import { authGuard } from './auth.guard';
 export const routes: Routes = [
 
   {path:'',pathMatch:"full",
   loadComponent:()=>import('./features/authentication/authentication.component').then((a)=>a.AuthenticationComponent)
   },{path:'login',redirectTo:''},
   {path:'home',
-loadComponent:()=>import('./main/timeline/timeline.component').then((c)=>c.TimelineComponent),children:[
+loadComponent:()=>import('./main/timeline/timeline.component').then((c)=>c.TimelineComponent),canActivate:[authGuard],children:[
   {path:'',loadComponent:()=>import('./main/timeline/forum/forum.component').then((ff)=>ff.ForumComponent)},
  /* { path:'',loadComponent:()=>import('./main/postlist/postlist.component').then((d)=>d.PostlistComponent)
 }, */{path:'post',loadComponent:()=>import('./main/postlist/post-form/post-form.component').then((e=>e.PostFormComponent))},

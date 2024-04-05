@@ -1,49 +1,56 @@
-.card{height: 350px;
-/* border:red solid 1px; */
-border-radius: 25px;
-/* box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
-margin-bottom: 20px;
--webkit-box-shadow: 6px 7px 11px 0px rgba(207,73,11,1);
--moz-box-shadow: 6px 7px 11px 0px rgba(207,73,11,1);
-box-shadow: 6px 7px 11px 0px rgba(207,73,11,1);
-display: flex;
-flex-direction: column;
-align-items: center;
-font-family: "Caveat";
-font-size: 20px;
-}
-.card-title{
-  width: 100%;
-  background-color: #fc766a;
-  padding: 10px;
-  border-radius: 25px 25px 0px 0px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  cursor: pointer;
-}
-.card-body{height: 250px;
-/* background-color: #333D79FF */;
-width: 100%;
-/* color: #FAEBEFFF; */
-padding: 10px;
-}
-.card-bottom{
-  width: 100%;
-  background-color: #fc766a;
-border-radius: 0px 0px 25px 25px;
-  height:50px ;
-  align-self: flex-end;
-  display: flex;
-justify-content: center;
-align-items: center;
-padding: 10px;
 
-}
-.card-bottom h6{margin-left: auto;padding: 5px;}
-.card-bottom img{width: 20px;height: 20px;}
 
-span{
-  cursor: pointer;
+
+
+
+.card {
+  background-color: #fff; /* Light background to ensure text is readable */
+  border: 1px solid #e0e0e0; /* Subtle border to define card edges */
+  border-radius: 8px; /* Softened corners for a modern look */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  color: #333; /* Primary text color */
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Modern, clean font */
+  margin: 20px; /* Spacing around the card */
+  overflow: hidden; /* Ensures content fits within rounded corners */
+}
+
+.card-title h3 {
+  background-color: #5b74b1; /* Primary blue for title bar */
+  color: #fff; /* White text for contrast */
+  margin: 0; /* Remove default margin */
+  padding: 15px 20px; /* Comfortable padding around title */
+  cursor: pointer; /* Indicates the title is clickable */
+}
+
+.card-body {
+  padding: 20px; /* Consistent padding for content */
+  font-size: 16px; /* Readable text size */
+}
+
+.card-body span {
+  color: #fc766a; /* Coral color for the 'read more' link */
+  cursor: pointer; /* Indicates link is clickable */
+}
+
+.card-bottom {
+  background-color: #f7f7f7; /* Slightly different background for bottom area */
+  border-top: 1px solid #e0e0e0; /* Line to separate from card content */
+  display: flex; /* Enables flexbox layout */
+  justify-content: space-between; /* Spreads items to both ends */
+  padding: 10px 20px; /* Padding for spacing */
+  align-items: center; /* Vertically centers items */
+}
+
+.comment-box {
+  display: flex; /* Aligns like icon and number */
+  align-items: center; /* Centers items vertically */
+}
+
+.comment-box img {
+  margin-right: 5px; /* Space between icon and number */
+}
+
+.card-bottom h6 {
+  margin: 0; /* Remove default margin */
+  color: #5b74b1; /* Use primary blue for author username */
 }

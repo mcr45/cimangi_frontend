@@ -147,6 +147,84 @@ input{
 
 
 
+.navbar {
+  background-color: #2c3e50; /* Dark blue background */
+  color: #ecf0f1; /* Light grey text */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Search input and button */
+.navbar-search {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-search button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar-search input[type="search"] {
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border: none;
+  border-radius: 0.25rem;
+}
+
+/* Action buttons */
+.navbar-actions button {
+  background-color: #3498db; /* Light blue */
+  color: #ecf0f1;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-left: 0.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-actions button:hover {
+  background-color: #2980b9; /* Darker blue */
+}
+
+/* Profile info */
+.navbar-info {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Pushes to the right */
+}
+
+.navbar-info img,
+.navbar-profile-pic img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%; /* Makes image round */
+  margin-right: 0.5rem;
+}
+
+.navbar-profile-pic {
+  overflow: hidden; /* Ensures image is contained */
+}
+
+/* Adjust the font size for the username */
+.navbar-info p {
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+}
+
+
 
 
 
