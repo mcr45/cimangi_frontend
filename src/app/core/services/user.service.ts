@@ -14,18 +14,22 @@ export class UserService {
   email:string;
   username:string; */
   user!: User;
-  usersubject!:BehaviorSubject<User>
-  constructor(private http:HttpClient) {}
+  usersubject!: BehaviorSubject<User>;
+  constructor(private http: HttpClient) {}
 
   setUser(userdata: User) {
     /* this.user = new User(userdata); */
-    this.http.get<User>(`${environment.apiUrl}/loggeduser`).subscribe((res)=>{this.user=res})
+    this.http.get<User>(`${environment.apiUrl}/loggeduser`).subscribe((res) => {
+      this.user = res;
+    });
   }
   getUser() {
-    return this.user
+    return this.user;
   }
-  loadUser(){
-     /* this.http.get<User>(`${environment.apiUrl}/loggeduser`).subscribe((res)=>{this.usersubject.next(res)}) */
-     this.http.get<User>(`${environment.apiUrl}/loggeduser`).subscribe((res)=>{this.user=res})
+  loadUser() {
+    /* this.http.get<User>(`${environment.apiUrl}/loggeduser`).subscribe((res)=>{this.usersubject.next(res)}) */
+    this.http.get<User>(`${environment.apiUrl}/loggeduser`).subscribe((res) => {
+      this.user = res;
+    });
   }
 }

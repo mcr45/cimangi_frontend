@@ -32,7 +32,7 @@ export class AuthenticationComponent {
   constructor(
     private authServ: AuthenticationService,
     private router: Router,
-    private us:UserService
+    private us: UserService
   ) {}
 
   OnFormSubmit(form: NgForm) {
@@ -42,7 +42,7 @@ export class AuthenticationComponent {
       this.authServ.logIn(form.value.username, form.value.password).subscribe({
         next: (res: any) => {
           console.log(res);
-          this.us.setUser(res.user)
+          this.us.setUser(res.user);
           this.authServ.setToken(res.token), this.router.navigate(['/home']);
         },
         error: (error: any) => {
@@ -61,11 +61,10 @@ export class AuthenticationComponent {
 
       console.log(this.createUser);
       this.authServ.signup(this.createUser).subscribe({
-        next: (res:any) => {
+        next: (res: any) => {
           console.log(res);
-          this.us.setUser(res.user)
-          this.authServ.setToken(res.token),
-          this.router.navigate(['/home']);
+          this.us.setUser(res.user);
+          this.authServ.setToken(res.token), this.router.navigate(['/home']);
         },
         error: (err) => {
           console.log(err);

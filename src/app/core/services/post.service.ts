@@ -20,7 +20,7 @@ export class PostService {
   getPost(id: number) {
     return this.http.get<Post>(`${environment.apiUrl}/posts/${id}`);
   }
-  getBestPost(){
-    return this.http.get<Post>(`${environment.apiUrl}/bestpost`)
+  getBestPost() {
+    return this.http.get<Post>(`${environment.apiUrl}/bestpost`);
   }
 }
