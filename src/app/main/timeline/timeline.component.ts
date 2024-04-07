@@ -10,6 +10,8 @@ import {
   RouterOutlet,
 } from '@angular/router';
 import { AuthenticationService } from '../../core/services/authentication.service';
+import { UserService } from '../../core/services/user.service';
+import { User } from '../../shared/models/user';
 
 @Component({
   selector: 'app-timeline',
@@ -27,11 +29,13 @@ export class TimelineComponent implements OnInit {
     private as:AuthenticationService,
     private ps: PostService,
     private routex: ActivatedRoute,
-    private route: Router
+    private route: Router,
+    private us:UserService
   ) {}
   errMsg: String = '';
   head: string = '';
   logged:boolean=false
+  user!:User
   ngOnInit(): void {
     /*  this.ps.getPosts().subscribe({next:(res)=>{this.posts=res},error:(err)=>{this.errMsg=err,console.log(err)}})
   this.route.queryParams.subscribe((res)=>console.log(res)) */
@@ -39,6 +43,8 @@ export class TimelineComponent implements OnInit {
       event instanceof NavigationEnd ? (this.head = event.url) : null;
     });
     this.logged=this.as.isLoggedIn()
+    this.user=this.us.getUser()
+    console.log(`this is the ${this.user.first_name} and ${this.user.posts} logged now`)
   }
 
 

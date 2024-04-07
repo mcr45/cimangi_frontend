@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { AuthenticationService } from '../../core/services/authentication.service';
 import { Router } from '@angular/router';
+import { UserService } from '../../core/services/user.service';
 
 @Component({
   selector: 'app-authentication',
@@ -30,7 +31,8 @@ export class AuthenticationComponent {
   };
   constructor(
     private authServ: AuthenticationService,
-    private router: Router
+    private router: Router,
+    private us:UserService
   ) {}
 
   OnFormSubmit(form: NgForm) {
@@ -39,7 +41,8 @@ export class AuthenticationComponent {
     if (form.valid && this.toLog) {
       this.authServ.logIn(form.value.username, form.value.password).subscribe({
         next: (res: any) => {
-          console.log(res.token);
+          console.log(res);
+          this.us.setUser(res.user)
           this.authServ.setToken(res.token), this.router.navigate(['/home']);
         },
         error: (error: any) => {
@@ -60,6 +63,7 @@ export class AuthenticationComponent {
       this.authServ.signup(this.createUser).subscribe({
         next: (res:any) => {
           console.log(res);
+          this.us.setUser(res.user)
           this.authServ.setToken(res.token),
           this.router.navigate(['/home']);
         },
