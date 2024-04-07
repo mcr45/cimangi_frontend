@@ -17,7 +17,7 @@ export class RecipeFormComponent {
   constructor(private rs: RecipeService, private route: Router) {}
 
   onCreateForm(form: NgForm) {
-    console.log('ci sono');
+
     console.log(form);
     if (form.valid) {
       this.recipe = {
@@ -27,13 +27,15 @@ export class RecipeFormComponent {
       };
       this.rs.createRecipe(this.recipe).subscribe({
         next: (res) => {
-          console.log(res), this.route.navigate(['home/']);
+          console.log(res),
+          form.reset();
+          this.route.navigate(['home/'])
         },
         error: (err) => {
           console.log(err);
         },
       });
-      form.reset();
+
     }
   }
 }
