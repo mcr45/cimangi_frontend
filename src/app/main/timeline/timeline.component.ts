@@ -12,11 +12,12 @@ import {
 import { AuthenticationService } from '../../core/services/authentication.service';
 import { UserService } from '../../core/services/user.service';
 import { User } from '../../shared/models/user';
+import { ProfileComponent } from '../../features/profile/profile.component';
 
 @Component({
   selector: 'app-timeline',
   standalone: true,
-  imports: [RouterOutlet, RouterLink],
+  imports: [RouterOutlet, RouterLink,ProfileComponent],
   templateUrl: './timeline.component.html',
   styleUrl: './timeline.component.scss',
 })

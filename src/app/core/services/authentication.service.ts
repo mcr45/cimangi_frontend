@@ -12,10 +12,7 @@ export class AuthenticationService {
   constructor(private http: HttpClient, private route: Router) {}
 
   logIn(username: string, password: string) {
-   /*  return this.http.post<{ token: string }>(environment.logInUrl, {
-      username,
-      password,
-    }); */
+
     return this.http.post<{ token: string }>(`${environment.logInUrl}`, {
       username,
       password,
