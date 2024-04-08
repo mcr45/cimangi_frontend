@@ -26,5 +26,12 @@ export class PostlistComponent implements OnInit {
         this.error = err.message;
       },
     });
+
+
   }
+onLoad($event:any){
+
+console.log(`dalle 45 ${$event}`)
+}
+
 }

@@ -26,4 +26,12 @@ export class PostAllComponent implements OnInit {
       },
     });
   }
+
+
+  onLoad($event:any){
+    this.posts=$event
+    console.log(`dalle 45 ${$event}`)
+    }
+
+
 }

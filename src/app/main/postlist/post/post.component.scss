@@ -13,7 +13,14 @@
   margin: 20px; /* Spacing around the card */
   overflow: hidden; /* Ensures content fits within rounded corners */
 }
+.card-title {background-color: #5b74b1;display: flex;
+  justify-content: space-between;
 
+}
+app-edit{
+  align-self: center;
+position: relative;
+}
 .card-title h3 {
   background-color: #5b74b1; /* Primary blue for title bar */
   color: #fff; /* White text for contrast */

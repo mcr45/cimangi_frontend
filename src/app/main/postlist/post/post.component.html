@@ -2,6 +2,7 @@
 <div class="card">
   <div class="card-title">
     <h3 (click)="onPostInfo()">{{ post.title }}</h3>
+    @if(user.username==post.author?.username){<app-edit (delete)="showMe()"></app-edit>}
   </div>
   <div class="card-body">
     {{ post.body | slice : 0 : 10 }}@if (post.body.length>10) {<span (click)="onPostInfo()"
@@ -15,3 +16,4 @@
     <h6>{{ post.author?.username }}</h6>
   </div>
 </div>
+@if(alert){<app-alertbox (closeme)="closeMe()" [resource]="post" (done)="reload($event)" [type]="'post'"></app-alertbox>}
