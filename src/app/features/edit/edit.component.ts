@@ -10,11 +10,11 @@ import { AlertboxComponent } from '../alertbox/alertbox.component';
 })
 export class EditComponent {
 
-@Output()edit:EventEmitter<boolean>=new EventEmitter()
+@Output()update:EventEmitter<boolean>=new EventEmitter()
 @Output() delete:EventEmitter<boolean>=new EventEmitter
 
 onEdit(){
-  this.edit.emit(true)
+  this.update.emit(true)
 }
 
 onDelete(){

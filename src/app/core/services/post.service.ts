@@ -26,7 +26,7 @@ export class PostService {
     return this.http.get<Post>(`${environment.apiUrl}/bestpost`);
   }
   updatePost(post:Post){
-    return this.http.put(`${environment.apiUrl}/posts`, post);
+    return this.http.put(`${environment.apiUrl}/posts/${post.id}`, post);
   }
   deletePost(id:number){
     return this.http.delete(`${environment.apiUrl}/posts/${id}`);

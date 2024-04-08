@@ -6,11 +6,12 @@ import { User } from '../../../shared/models/user';
 import { UserService } from '../../../core/services/user.service';
 import { EditComponent } from '../../../features/edit/edit.component';
 import { AlertboxComponent } from '../../../features/alertbox/alertbox.component';
+import { UpdateboxComponent } from '../../../features/updatebox/updatebox.component';
 
 @Component({
   selector: 'app-post',
   standalone: true,
-  imports: [SlicePipe, RouterLink,EditComponent,AlertboxComponent],
+  imports: [SlicePipe, RouterLink,EditComponent,AlertboxComponent,UpdateboxComponent],
   templateUrl: './post.component.html',
   styleUrl: './post.component.scss',
 })
@@ -23,6 +24,8 @@ export class PostComponent implements OnInit {
 
   constructor(private route: Router,private us:UserService) {}
   alert:boolean=false
+  update:boolean=false
+
   ngOnInit(): void {
       this.user=this.us.getUser()
   }
@@ -45,8 +48,12 @@ export class PostComponent implements OnInit {
     this.posts=$event
     this.load.emit(this.posts)
     this.alert=false
-    /* this.route.navigate(['home/posts']) */
-
+    this.update=false
   }
+
+  showUpdate(){
+    this.update=!this.update
+  }
+
 
 }
