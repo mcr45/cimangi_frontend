@@ -20,7 +20,7 @@ export class PostComponent implements OnInit {
   @Output () load:EventEmitter<Post[]>=new EventEmitter()
   user!:User
   posts!:Post[]
-
+  post_author!:string
 
   constructor(private route: Router,private us:UserService) {}
   alert:boolean=false
@@ -28,6 +28,7 @@ export class PostComponent implements OnInit {
 
   ngOnInit(): void {
       this.user=this.us.getUser()
+
   }
 
   onPostInfo() {

@@ -23,4 +23,7 @@ export class RecipelistComponent implements OnInit {
       },
     });
   }
+  onLoad(event:any){
+    this.recipes=event
+  }
 }

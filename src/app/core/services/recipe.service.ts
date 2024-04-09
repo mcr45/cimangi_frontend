@@ -19,4 +19,7 @@ export class RecipeService {
   createRecipe(recipe: Recipe) {
     return this.http.post(`${environment.apiUrl}/recipes`, recipe);
   }
+  deleteRecipe(id:number){
+    return this.http.delete(`${environment.apiUrl}/recipes/${id}`);
+  }
 }

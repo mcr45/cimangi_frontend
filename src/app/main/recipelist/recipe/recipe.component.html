@@ -27,6 +27,12 @@
   style="background-image:url('assets/img/{{ recipe.category }}.jpg')"
 >
   <div class="head" (click)="onRecipe()">
-    {{ recipe.title }}{{ recipe.author?.username }}
+    {{ recipe.title }}
   </div>
+  <div class="bottom-card">
+    by:{{ recipe.author?.username }} @if(recipe.author?.username===user.username){<app-edit (update)="showUpdate()" (delete)="showDelete()"></app-edit>}
+  </div>
+
+  @if (delete) {<app-alertbox [resource]="recipe" [type]="'recipe'" (closeme)="onClose()"  (done)="reload($event)"></app-alertbox>}
 </div>
+@if(update){<app-updatebox></app-updatebox>}

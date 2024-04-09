@@ -2,7 +2,7 @@
   <div class="content">
     @for (recipe of recipes; track recipe.id) {
 
-    <app-recipe [recipe]="recipe"></app-recipe>
+    <app-recipe [recipe]="recipe" (load)="onLoad($event)"></app-recipe>
 
     } @empty {
     <h1>NO RECIPES. PLEASE CHECK YOUR CONNECTION</h1>
