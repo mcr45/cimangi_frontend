@@ -37,10 +37,10 @@ export class AlertboxComponent {
         },
       });
     } else if(this.type=='recipe') {
-      console.log('i was called');
-      /* this.rs.deleteRecipe(this.resource.id!).subscribe({next:(res:any)=>{console.log(res),
+
+      this.rs.deleteRecipe(this.resource.id!).subscribe({next:(res:any)=>{console.log(res),
         this.done.emit(res)},
-      error:(err)=>{console.log(err)}}) */
+      error:(err)=>{console.log(err)}})
     }
 
   }
