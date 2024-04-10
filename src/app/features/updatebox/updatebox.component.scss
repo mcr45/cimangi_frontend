@@ -12,7 +12,7 @@
   flex-direction: column;
   justify-content: center; */
   position: fixed;
-  top: 30%;
+  top: 20%;
   right: 60%;
   width: 350px;
   height: 380px;
@@ -44,3 +44,57 @@
   align-self: flex-end;
 }
 .form-button{align-self: flex-end;}
+
+
+
+#recipeform{
+  border: #73AD21 solid 3px;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 420px;
+  background-color: #FFFFFF;
+  gap: 10px;
+}
+#cook{
+  resize: none;
+  flex: 1;
+  outline: none;
+}
+#recipeform button{
+  background-color: #fc766a;
+   /*  background-image: linear-gradient(-180deg, #f597b9, #a06393); */
+    border-radius: 6px;
+    box-shadow: rgba(236, 9, 9, 0.1) 0 2px 4px;
+    color: #FFFFFF;
+    cursor: pointer;
+    height: 40px;
+    line-height: 40px;
+    outline: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    pointer-events: auto;
+    position: relative;
+    text-align: center;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: top;
+    white-space: nowrap;
+    width: 100%;
+    z-index: 9;
+    border: 0;
+    transition: box-shadow 0.2s;
+    width: fit-content;
+    align-self: center;
+}
+#recipeform label{
+  color: #FFFFFF;
+}
+#recipeform select{
+  background-color: bisque;
+}
+#recipeform ::placeholder{
+  color: hsl(279, 100%, 66%);
+}

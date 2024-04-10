@@ -41,6 +41,7 @@ export class RecipeComponent implements OnInit{
   reload($event:any){
     this.load.emit($event)
     this.delete=false
+    this.update=false
   }
 
   onClose(){

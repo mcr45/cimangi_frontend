@@ -19,6 +19,9 @@ export class RecipeService {
   createRecipe(recipe: Recipe) {
     return this.http.post(`${environment.apiUrl}/recipes`, recipe);
   }
+  updateRecipe(id:number,recipe:Recipe){
+    return this.http.put<Recipe>(`${environment.apiUrl}/recipes/${id}`,recipe)
+  }
   deleteRecipe(id:number){
     return this.http.delete(`${environment.apiUrl}/recipes/${id}`);
   }
