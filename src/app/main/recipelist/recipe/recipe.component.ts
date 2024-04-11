@@ -46,7 +46,7 @@ export class RecipeComponent implements OnInit{
 
   onClose(){
     this.delete=false
-
+    this.update=false
   }
 
 }

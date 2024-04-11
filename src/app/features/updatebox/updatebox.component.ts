@@ -18,6 +18,7 @@ export class UpdateboxComponent {
   @Input() post!: Post;
   @Input() recipe!:Recipe;
   @Output() updated: EventEmitter<Post|Recipe> = new EventEmitter();
+  @Output() closeme:EventEmitter<boolean>=new EventEmitter()
 
   constructor(private ps: PostService, private rs: RecipeService) {}
 
@@ -68,6 +69,10 @@ export class UpdateboxComponent {
   }
 
 
+
+  closeForm(){
+    this.closeme.emit(true)
+  }
 
 
 

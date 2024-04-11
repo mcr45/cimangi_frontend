@@ -17,4 +17,4 @@
   </div>
 </div>
 @if(alert){<app-alertbox (closeme)="closeMe()" [resource]="post" (done)="reload($event)" [type]="'post'"></app-alertbox>}
-@if(update){<app-updatebox [type]="'post'" (updated)="reload($event)" [post]="post"></app-updatebox>}
+@if(update){<app-updatebox [type]="'post'" (updated)="reload($event)" [post]="post" (closeme)="closeMe()"></app-updatebox>}

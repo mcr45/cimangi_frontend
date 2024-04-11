@@ -26,6 +26,9 @@ export class UserService {
   getUser() {
     return this.user;
   }
+  profileUser(){
+    return this.http.get<User>(`${environment.apiUrl}/loggeduser`)
+  }
   loadUser() {
     /* this.http.get<User>(`${environment.apiUrl}/loggeduser`).subscribe((res)=>{this.usersubject.next(res)}) */
     this.http.get<User>(`${environment.apiUrl}/loggeduser`).subscribe((res) => {

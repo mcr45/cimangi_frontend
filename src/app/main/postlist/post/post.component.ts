@@ -43,6 +43,7 @@ export class PostComponent implements OnInit {
   }
   closeMe(){
     this.alert=false
+    this.update=false
   }
   reload($event:any){
     console.log($event)

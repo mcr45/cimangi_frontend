@@ -34,6 +34,6 @@
   </div>
 
   @if (delete) {<app-alertbox [resource]="recipe" [type]="'recipe'" (closeme)="onClose()"  (done)="reload($event)"></app-alertbox>}
-  @if(update){<app-updatebox [type]="'recipe'" [recipe]="recipe" (updated)="reload($event)"></app-updatebox>}
+  @if(update){<app-updatebox [type]="'recipe'" [recipe]="recipe" (updated)="reload($event)" (closeme)="onClose()"></app-updatebox>}
 </div>
 
