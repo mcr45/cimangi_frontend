@@ -1,0 +1,24 @@
+.navbar-info {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Pushes to the right */
+}
+
+.navbar-info img,
+.navbar-profile-pic img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%; /* Makes image round */
+  margin-right: 0.5rem;
+}
+
+.navbar-profile-pic {
+  overflow: hidden; /* Ensures image is contained */
+}
+
+/* Adjust the font size for the username */
+.navbar-info p {
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+}

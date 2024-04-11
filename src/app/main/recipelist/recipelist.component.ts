@@ -7,19 +7,23 @@ import { RecipeComponent } from './recipe/recipe.component';
   standalone: true,
   imports: [RecipeComponent],
   templateUrl: './recipelist.component.html',
-  styleUrl: './recipelist.component.scss'
+  styleUrl: './recipelist.component.scss',
 })
-export class RecipelistComponent implements OnInit{
-recipes:Recipe[]=[]
-  constructor(private rs:RecipeService){}
+export class RecipelistComponent implements OnInit {
+  recipes: Recipe[] = [];
+  constructor(private rs: RecipeService) {}
 
   ngOnInit(): void {
-      this.rs.getRecipes().subscribe({
-        next:(res:any)=>{console.log(res),
-          this.recipes=res
-        },
-        error:(err)=>{console.log(err)}
-      })
+    this.rs.getRecipes().subscribe({
+      next: (res: any) => {
+        console.log(res), (this.recipes = res);
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
   }
-
+  onLoad(event:any){
+    this.recipes=event
+  }
 }

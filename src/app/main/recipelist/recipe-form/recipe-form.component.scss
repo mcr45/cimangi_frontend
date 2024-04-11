@@ -1,0 +1,85 @@
+main{
+  background-image: url('/assets/img/restaurantmenu.jpg');
+  background-size: cover;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  padding: 15px;
+  font-family: "Rubik";
+}
+.header{
+  align-self: flex-start;
+}
+.header h1{
+  color: #fc766a;
+
+}
+.body{
+  align-self: center;
+}
+.container{
+  height:790px;
+  width: 800;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url('/assets/img/page.jpg');
+  background-size: cover;
+  padding: 20px;
+  margin-top: 65px;
+}
+form{
+  margin-top: 90px;
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  width: 600px;
+  opacity: 0.6;
+  gap: 20px;
+}
+#cook{
+  resize: none;
+  flex: 1;
+  outline: none;
+}
+button{
+  background-color: #fc766a;
+   /*  background-image: linear-gradient(-180deg, #f597b9, #a06393); */
+    border-radius: 6px;
+    box-shadow: rgba(236, 9, 9, 0.1) 0 2px 4px;
+    color: #FFFFFF;
+    cursor: pointer;
+    height: 40px;
+    line-height: 40px;
+    outline: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    pointer-events: auto;
+    position: relative;
+    text-align: center;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: top;
+    white-space: nowrap;
+    width: 100%;
+    z-index: 9;
+    border: 0;
+    transition: box-shadow 0.2s;
+    width: fit-content;
+    align-self: center;
+}
+label{
+  color: #FFFFFF;
+}
+select{
+  background-color: bisque;
+}
+::placeholder{
+  color: hsl(279, 100%, 66%);
+}
+/* #cook{
+  background-image: url('/assets/img/whitepaper.jpg');
+  background-position: right 0px top -90px;
+} */

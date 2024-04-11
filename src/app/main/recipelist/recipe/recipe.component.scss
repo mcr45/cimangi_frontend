@@ -13,7 +13,7 @@
   background-position: center;
   align-items: center;
   padding: 15px;
-
+  justify-content: space-between;
 
   }
 
@@ -26,3 +26,27 @@
   .head:hover{
     cursor: pointer;
   }
+
+  .bottom-card{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    background-color: khaki;
+    color: black;
+    border-radius: 25px;
+    padding: 10px;
+   gap: 50%;
+  }
+/* header{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
+app-updatebox{
+  position: fixed;
+  top: 15%;
+  left: 65%;
+
+  transform: translate(-50%, -50%);
+}

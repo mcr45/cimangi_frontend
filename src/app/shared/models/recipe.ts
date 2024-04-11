@@ -5,7 +5,7 @@ id?:number;
 title:string;
 body:string;
 category:string;
-author:User;
+author?:User;
 comments?:Comment[]
 
 constructor(recipe:any){

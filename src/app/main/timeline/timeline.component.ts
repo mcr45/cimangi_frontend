@@ -9,11 +9,15 @@ import {
   RouterLink,
   RouterOutlet,
 } from '@angular/router';
+import { AuthenticationService } from '../../core/services/authentication.service';
+import { UserService } from '../../core/services/user.service';
+import { User } from '../../shared/models/user';
+import { ProfileComponent } from '../../features/profile/profile.component';
 
 @Component({
   selector: 'app-timeline',
   standalone: true,
-  imports: [RouterOutlet, RouterLink],
+  imports: [RouterOutlet, RouterLink,ProfileComponent],
   templateUrl: './timeline.component.html',
   styleUrl: './timeline.component.scss',
 })
@@ -23,17 +27,31 @@ export class TimelineComponent implements OnInit {
 ] */
   posts: Post[] = [];
   constructor(
+    private as:AuthenticationService,
     private ps: PostService,
     private routex: ActivatedRoute,
-    private route: Router
+    private route: Router,
+    private us:UserService
   ) {}
   errMsg: String = '';
   head: string = '';
+  logged:boolean=false
+  user!:User
   ngOnInit(): void {
     /*  this.ps.getPosts().subscribe({next:(res)=>{this.posts=res},error:(err)=>{this.errMsg=err,console.log(err)}})
   this.route.queryParams.subscribe((res)=>console.log(res)) */
-  this.route.events.subscribe((event:any) => {       event instanceof NavigationEnd ? this.head=event.url: null     })
-
-
+    this.route.events.subscribe((event: any) => {
+      event instanceof NavigationEnd ? (this.head = event.url) : null;
+    });
+    this.logged=this.as.isLoggedIn()
+    this.user=this.us.getUser()
+    console.log(`this is the ${this.user.first_name} and ${this.user.posts} logged now`)
   }
+
+
+  logOut(){
+    this.as.logout()
+  }
+
+
 }

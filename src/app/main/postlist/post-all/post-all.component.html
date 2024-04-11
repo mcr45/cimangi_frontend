@@ -1,15 +1,10 @@
-
 <div class="main">
   <div class="content">
+    @for (post of posts; track post.id) {
 
-  @for (post of posts; track post.id) {
-
-    <app-post [post]="post"></app-post>
-  }
-@empty {
-  NO POST.
-  ERROR
-  {{error}}
-}
+    <app-post (load)="onLoad($event)" [post]="post"></app-post>
+    } @empty { NO POST. ERROR
+    {{ error }}
+    }
   </div>
 </div>

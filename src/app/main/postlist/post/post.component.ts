@@ -1,25 +1,61 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Post } from '../../../shared/models/post';
 import { SlicePipe } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
+import { User } from '../../../shared/models/user';
+import { UserService } from '../../../core/services/user.service';
+import { EditComponent } from '../../../features/edit/edit.component';
+import { AlertboxComponent } from '../../../features/alertbox/alertbox.component';
+import { UpdateboxComponent } from '../../../features/updatebox/updatebox.component';
 
 @Component({
   selector: 'app-post',
   standalone: true,
-  imports: [SlicePipe,RouterLink],
+  imports: [SlicePipe, RouterLink,EditComponent,AlertboxComponent,UpdateboxComponent],
   templateUrl: './post.component.html',
-  styleUrl: './post.component.scss'
+  styleUrl: './post.component.scss',
 })
-export class PostComponent {
+export class PostComponent implements OnInit {
+  @Input() post!: Post;
+  @Output () load:EventEmitter<Post[]>=new EventEmitter()
+  user!:User
+  posts!:Post[]
+  post_author!:string
 
-@Input()post!:Post
+  constructor(private route: Router,private us:UserService) {}
+  alert:boolean=false
+  update:boolean=false
 
-constructor(private route:Router){}
+  ngOnInit(): void {
+      this.user=this.us.getUser()
 
-onPostInfo(){
-this.route.navigate([`home/posts/${this.post.id}/info`])
+  }
 
-console.log('you call me')
-}
+  onPostInfo() {
+    this.route.navigate([`home/posts/${this.post.id}/info`]);
+
+    console.log('you call me');
+  }
+
+  showMe(){
+    this.alert=!this.alert
+    console.log('ci sonononono')
+  }
+  closeMe(){
+    this.alert=false
+    this.update=false
+  }
+  reload($event:any){
+    console.log($event)
+    this.posts=$event
+    this.load.emit(this.posts)
+    this.alert=false
+    this.update=false
+  }
+
+  showUpdate(){
+    this.update=!this.update
+  }
+
 
 }

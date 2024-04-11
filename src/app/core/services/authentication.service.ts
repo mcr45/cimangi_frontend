@@ -12,7 +12,7 @@ export class AuthenticationService {
   constructor(private http: HttpClient, private route: Router) {}
 
   logIn(username: string, password: string) {
-    return this.http.post<{ token: string }>(environment.logInUrl, {
+    return this.http.post<{ token: string }>(`${environment.logInUrl}`, {
       username,
       password,
     });
@@ -38,6 +38,6 @@ export class AuthenticationService {
   }
 
   signup(user: any) {
-    return this.http.post(environment.apiUrl + '/users', user);
+    return this.http.post(`${environment.apiUrl}` + '/users', user);
   }
 }

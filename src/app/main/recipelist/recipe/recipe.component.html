@@ -3,7 +3,8 @@
   {{recipe.body}}
   {{recipe.category}}
   {{recipe.title}}
-</p> -->  <!-- 'vegan','meal','romantic_dinner','pizza','soup' -->
+</p> -->
+<!-- 'vegan','meal','romantic_dinner','pizza','soup' -->
 <!-- <div class="card">
 <div class="head"><div class="author">{{recipe.author.username}}</div>
 <div class="title"> {{recipe.title}}</div><div class="category">{{recipe.category}}</div></div>
@@ -21,20 +22,18 @@
 
 </div> -->
 
+<div
+  class="card"
+  style="background-image:url('assets/img/{{ recipe.category }}.jpg')"
+>
+  <div class="head" (click)="onRecipe()">
+    {{ recipe.title }}
+  </div>
+  <div class="bottom-card">
+    by:{{ recipe.author?.username }} @if(recipe.author?.username===user.username){<app-edit (update)="showUpdate()" (delete)="showDelete()"></app-edit>}
+  </div>
 
-<div class="card" style="background-image:url('assets/img/{{recipe.category}}.jpg')">
-
-
-<div class="head" (click)="onRecipe()">{{recipe.title}}{{recipe.author.username}}</div>
-
-
-
-
-
+  @if (delete) {<app-alertbox [resource]="recipe" [type]="'recipe'" (closeme)="onClose()"  (done)="reload($event)"></app-alertbox>}
+  @if(update){<app-updatebox [type]="'recipe'" [recipe]="recipe" (updated)="reload($event)" (closeme)="onClose()"></app-updatebox>}
 </div>
-
-
-
-
-
 

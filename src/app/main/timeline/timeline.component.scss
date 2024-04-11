@@ -14,17 +14,19 @@ html,body{height: 100vh;}
 .container{
   height: 100vh;//qui
   width: 100%;
-  display: grid;
-  grid-template-columns: 20% 80%;//qui
+ /*  display: grid;
+  grid-template-columns: 20% 80%; *///qui
+  display: flex;
   gap: 0px;
 }
 .left{
   height: 100vh;//qui
   padding: 25px;
   position: fixed;//questo
-  background-color: #5EBEC4;
+  background-color: #5B84B1FF;
   grid-column: 1;
-
+  width: 250px;
+  color: white;
 }
 .menu{
   height: 100%;
@@ -32,20 +34,29 @@ html,body{height: 100vh;}
   flex-direction: column;
   gap: 10px;
 }
+.settings{
+  display: flex;
+  color: white;
+  justify-self: end;
+  cursor: pointer;
+}
 .logo,.links>div{
   display: flex;
   gap: 15px;
 }
 .links>div .img-box{align-self: center;}
-.links>div .img-box img{filter:invert(48%) sepia(79%) saturate(5476%) hue-rotate(256deg) brightness(128%) contrast(919%)}
-.links h5:hover{border-bottom:solid #0f939c 1px;
+.links>div .img-box img{/* filter:invert(48%) sepia(79%) saturate(5476%) hue-rotate(256deg) brightness(128%) contrast(919%) */
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(328deg) brightness(103%) contrast(101%);
+}
+.links h5:hover,.settings h5:hover{border-bottom:solid #2508e3 1px;
 cursor: pointer;
 color: white;
 }
 .right{
+  width: 100%;
+  margin-left: 250px;
   padding-left: 0%;//qui
   height: 130%;//qui
-background-color: #FDF5DF;
 grid-column: 2;
 display: flex;
 flex-direction: column;}
@@ -53,7 +64,8 @@ flex-direction: column;}
   display: flex;
   flex-direction: column;
   padding: 25px;
-  box-shadow: 0px 2px 3px 1px rgba(20,20,20,0.4)
+  box-shadow: 0px 2px 3px 1px rgba(20,20,20,0.4);
+  background-color:  #FC766AFF
 }
 .profile{display: flex; justify-content: space-between;}
 .profile-input{display: flex;}
@@ -82,12 +94,11 @@ input{
 }
 .profile-img-box img{border-radius: 50%;height: 45px;width: 45px;}
 
-.right-down{padding: 15px;}
+/* .right-down{height: 100%;} */
 .header{
   display: flex;
   justify-content: center;
 }
-
 
 
 
@@ -134,6 +145,84 @@ input{
 
 
 
+
+
+.navbar {
+  background-color: #2c3e50; /* Dark blue background */
+  color: #ecf0f1; /* Light grey text */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Search input and button */
+.navbar-search {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-search button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar-search input[type="search"] {
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border: none;
+  border-radius: 0.25rem;
+}
+
+/* Action buttons */
+.navbar-actions button {
+  background-color: #3498db; /* Light blue */
+  color: #ecf0f1;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-left: 0.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-actions button:hover {
+  background-color: #2980b9; /* Darker blue */
+}
+
+/* Profile info */
+.navbar-info {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Pushes to the right */
+}
+
+.navbar-info img,
+.navbar-profile-pic img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%; /* Makes image round */
+  margin-right: 0.5rem;
+}
+
+.navbar-profile-pic {
+  overflow: hidden; /* Ensures image is contained */
+}
+
+/* Adjust the font size for the username */
+.navbar-info p {
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+}
 
 
 

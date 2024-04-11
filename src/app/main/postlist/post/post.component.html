@@ -1,12 +1,20 @@
 <!-- <p>post works!</p> -->
 <div class="card">
- <div class="card-title"><h3 (click)="onPostInfo()"  >{{post.title}}</h3></div>
- <div class="card-body">{{post.body|slice:0:10}}@if (post.body.length>10) {<a>....  read more</a>}</div>
- <div class="card-bottom">
-  <div class="comment-box"><img src="/assets/icons/likes.svg" alt=""><span>{{post.likes}}</span></div>
-  <h6>{{post.author?.username}}</h6>
- </div>
-
-
-
+  <div class="card-title">
+    <h3 (click)="onPostInfo()">{{ post.title }}</h3>
+    @if(user.username==post.author?.username){<app-edit (delete)="showMe()" (update)="showUpdate()"></app-edit>}
+  </div>
+  <div class="card-body">
+    {{ post.body | slice : 0 : 10 }}@if (post.body.length>10) {<span (click)="onPostInfo()"
+      >.... read more</span
+    >}
+  </div>
+  <div class="card-bottom">
+    <div class="comment-box">
+      <img src="/assets/icons/likes.svg" alt="" /><span>{{ post.likes }}</span>
+    </div>
+    <h6>{{ post.author?.username }}</h6>
+  </div>
 </div>
+@if(alert){<app-alertbox (closeme)="closeMe()" [resource]="post" (done)="reload($event)" [type]="'post'"></app-alertbox>}
+@if(update){<app-updatebox [type]="'post'" (updated)="reload($event)" [post]="post" (closeme)="closeMe()"></app-updatebox>}
