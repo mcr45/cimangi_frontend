@@ -9,13 +9,17 @@ import { RecipelistComponent } from './main/recipelist/recipelist.component';
 import { RecipeDetailComponent } from './main/recipelist/recipe-detail/recipe-detail.component';
 import { RecipeFormComponent } from './main/recipelist/recipe-form/recipe-form.component';
 import { ForumComponent } from './main/timeline/forum/forum.component';
+import { SettingsComponent } from './main/settings/settings.component';
 import { authGuard } from './auth.guard';
 import { nonAuthGuard } from './non-auth.guard';
+
 export const routes: Routes = [
 
   {path:'',pathMatch:"full",
   loadComponent:()=>import('./features/authentication/authentication.component').then((a)=>a.AuthenticationComponent),canActivate:[nonAuthGuard]
   },{path:'login',redirectTo:''},
+  {path:'settings',loadComponent:()=>import('./main/settings/settings.component').then((c)=>c.SettingsComponent)}
+  ,
   {path:'home',
 loadComponent:()=>import('./main/timeline/timeline.component').then((c)=>c.TimelineComponent),canActivate:[authGuard],children:[
   {path:'',loadComponent:()=>import('./main/timeline/forum/forum.component').then((ff)=>ff.ForumComponent)},
