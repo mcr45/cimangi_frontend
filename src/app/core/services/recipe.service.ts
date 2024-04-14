@@ -25,4 +25,7 @@ export class RecipeService {
   deleteRecipe(id:number){
     return this.http.delete(`${environment.apiUrl}/recipes/${id}`);
   }
+  my_most_viewed(){
+    return this.http.get<Recipe>(`${environment.apiUrl}/topviewsr`);
+  }
 }

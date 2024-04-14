@@ -31,6 +31,9 @@ export class PostService {
   deletePost(id:number){
     return this.http.delete(`${environment.apiUrl}/posts/${id}`);
   }
+  my_most_viewed(){
+    return this.http.get<Post>(`${environment.apiUrl}/topviewsp`);
+  }
   changeList(posts:Post[]){
    this.postListChanged.next(posts)
   }
