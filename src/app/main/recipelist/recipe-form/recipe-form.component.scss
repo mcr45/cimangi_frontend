@@ -1,5 +1,5 @@
 main{
-  background-image: url('/assets/img/restaurantmenu.jpg');
+  /* background-image: url('/assets/img/restaurantmenu.jpg'); */
   background-size: cover;
   display: flex;
   width: 100%;
@@ -24,13 +24,13 @@ main{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-image: url('/assets/img/page.jpg');
+  /* background-image: url('/assets/img/page.jpg'); */
   background-size: cover;
   padding: 20px;
-  margin-top: 65px;
+  margin-top: 0px;
 }
 form{
-  margin-top: 90px;
+  margin-top: 5px;
   display: flex;
   flex-direction: column;
   height: 500px;

@@ -11,7 +11,7 @@
           name="title"
           id="title"
           #formTitle="ngModel"
-          ngModel
+          [(ngModel)]="post.title"
           required
         /><label for="body">Content</label
         ><textarea
@@ -20,7 +20,7 @@
           cols="30"
           rows="10"
           #formBody="ngModel"
-          ngModel
+          [(ngModel)]="post.body"
           required
           placeholder="Be nice or be Pizza"
         ></textarea>
@@ -35,7 +35,7 @@
   <form #recipeForm="ngForm" (ngSubmit)="onUpdateRecipeForm(recipeForm)" id="recipeform">
     <!-- <label for="category">choose a category</label> -->
 
-    <select name="category" id="category" #categoryRef="ngModel" ngModel required>
+    <select name="category" id="category" #categoryRef="ngModel" [(ngModel)]="recipe.category" required>
       <option value="" disabled>SELECT A CATEGORY</option>
       <option value="vegan" selected="true">Vegan</option>
       <option value="meal">Meal</option>
@@ -44,8 +44,8 @@
       <option value="soup">Soup</option>
     </select>
     <!-- <label for="title">title</label> -->
-    <input type="text" name="title" id="title" #title="ngModel" ngModel  placeholder="TITLE"  required  />
-    <textarea name="cook" id="cook" #cook="ngModel" ngModel required autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+    <input type="text" name="title" id="title" #title="ngModel" [(ngModel)]="recipe.title"  placeholder="TITLE"  required  />
+    <textarea name="cook" id="cook" #cook="ngModel" [(ngModel)]="recipe.body" required autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
     <div class="recipe-buttons"><button id="closebutton" (click)="closeForm()">BACK</button><button type="submit" [disabled]="!recipeForm.valid">UPDATE</button></div>
   </form>
 }

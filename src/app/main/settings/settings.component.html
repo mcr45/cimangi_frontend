@@ -1,0 +1,30 @@
+<main>
+  <div class="top">
+    <div class="top-background"></div>
+    <div class="profile-box">
+      <div class="head">
+        <img src="/assets/img/mario.jpg" alt="Profile Picture" />
+      </div>
+      <div class="body">
+        <h1><p>name:</p>{{user.first_name}}</h1>
+        <h1><p>last name:</p>{{user.last_name}}</h1>
+        <h1><p>username:</p>{{user.username}}</h1>
+        <h3><p>Email:</p>{{user.email}}</h3>
+      </div>
+    </div>
+  </div>
+  <div class="middle">
+    <div class="mypost">
+      <h1>My most viewed post:</h1>
+      <app-post [post]="post" (load)="reloadPost()"></app-post>
+    </div>
+    <div class="myrecipe">
+      <h1>My most viewed Recipe:</h1>
+      <app-recipe [recipe]="recipe" (load)="reloadRecipe()"></app-recipe>
+    </div>
+  </div>
+  <div class="bottom" [routerLink]="['/home']">
+    <!-- <button [routerLink]="['/home']" routerLinkActive="router-link-active" >HOME</button> -->
+    <img src="/assets/icons/arrow.svg" alt="" />
+  </div>
+</main>
