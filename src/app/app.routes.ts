@@ -12,13 +12,14 @@ import { ForumComponent } from './main/timeline/forum/forum.component';
 import { SettingsComponent } from './main/settings/settings.component';
 import { authGuard } from './auth.guard';
 import { nonAuthGuard } from './non-auth.guard';
+import { gohomeGuard } from './gohome.guard';
 
 export const routes: Routes = [
 
   {path:'',pathMatch:"full",
   loadComponent:()=>import('./features/authentication/authentication.component').then((a)=>a.AuthenticationComponent),canActivate:[nonAuthGuard]
   },{path:'login',redirectTo:''},
-  {path:'settings',loadComponent:()=>import('./main/settings/settings.component').then((c)=>c.SettingsComponent)}
+  {path:'settings',loadComponent:()=>import('./main/settings/settings.component').then((c)=>c.SettingsComponent),canActivate:[authGuard]}
   ,
   {path:'home',
 loadComponent:()=>import('./main/timeline/timeline.component').then((c)=>c.TimelineComponent),canActivate:[authGuard],children:[
