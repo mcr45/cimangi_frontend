@@ -1,5 +1,6 @@
 .main{
   display: flex;
+  flex-direction: column;
 width: 100%;
 
 }
@@ -10,4 +11,25 @@ width: 100%;
   grid-template-columns: repeat(auto-fill,minmax(200px,250px));
   gap: 50px;
   padding: 50px;
+}
+
+
+.paginate{
+  display: flex;
+  align-self: center;
+  padding: 10px;
+}
+.paginate button{
+  background-color: #3498db; /* Light blue */
+  color: #ecf0f1;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-left: 0.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.paginate button:hover {
+  background-color: #2980b9; /* Darker blue */
 }

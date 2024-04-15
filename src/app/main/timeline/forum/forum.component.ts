@@ -24,7 +24,7 @@ ngOnInit(){
   error:(err)=>{console.log(err)}}))
   this.recipe=this.recipes[this.recipes.length-1]
   console.log(this.recipe) */
-  this.rs.getRecipes().subscribe({
+  /* this.rs.getRecipes().subscribe({
     next: (res: any) => {
       console.log(res), (this.recipes = res);
       this.recipe=this.recipes[0]
@@ -33,7 +33,7 @@ ngOnInit(){
     error: (err) => {
       console.log(err);
     },
-  });
+  }); */
 
   this.ps.getBestPost().subscribe({
     next:(res)=>{this.post=res},

@@ -1,4 +1,5 @@
 <div class="main">
+
   <div class="content">
     @for (recipe of recipes; track recipe.id) {
 
@@ -8,4 +9,5 @@
     <h1>NO RECIPES. PLEASE CHECK YOUR CONNECTION</h1>
     }
   </div>
+  <div class="paginate"><button [disabled]="current_page==1" (click)="previousPage()">PREV</button><button [disabled]="current_page==total_pages||total_pages==0" (click)="nextPage()">NEXT</button></div>
 </div>

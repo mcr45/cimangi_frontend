@@ -8,8 +8,8 @@ import { Recipe } from '../../shared/models/recipe';
 export class RecipeService {
   constructor(private http: HttpClient) {}
 
-  getRecipes() {
-    return this.http.get<Recipe>(`${environment.apiUrl}/recipes`);
+  getRecipes(page:number) {
+    return this.http.get<Recipe>(`${environment.apiUrl}/recipes?page=${page}`);
   }
 
   getRecipe(id: number) {
