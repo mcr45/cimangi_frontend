@@ -11,7 +11,7 @@
   </div>
   <div class="card-bottom">
     <div class="comment-box">
-      <img src="/assets/icons/likes.svg" alt="" /><span>{{ post.likes }}</span>
+      <img src="/assets/icons/likes.svg" alt="" (click)="Ilike()" [ngClass]="liked?'liked': ''" /><span>{{ post.likes }}</span>
     </div>
     <h6>{{ post.author?.username }}</h6>
   </div>

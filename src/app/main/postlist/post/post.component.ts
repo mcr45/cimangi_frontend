@@ -1,17 +1,18 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Post } from '../../../shared/models/post';
-import { SlicePipe } from '@angular/common';
+import { CommonModule, SlicePipe } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { User } from '../../../shared/models/user';
 import { UserService } from '../../../core/services/user.service';
 import { EditComponent } from '../../../features/edit/edit.component';
 import { AlertboxComponent } from '../../../features/alertbox/alertbox.component';
 import { UpdateboxComponent } from '../../../features/updatebox/updatebox.component';
+import { PostService } from '../../../core/services/post.service';
 
 @Component({
   selector: 'app-post',
   standalone: true,
-  imports: [SlicePipe, RouterLink,EditComponent,AlertboxComponent,UpdateboxComponent],
+  imports: [SlicePipe, RouterLink,EditComponent,AlertboxComponent,UpdateboxComponent,CommonModule],
   templateUrl: './post.component.html',
   styleUrl: './post.component.scss',
 })
@@ -22,9 +23,10 @@ export class PostComponent implements OnInit {
   posts!:Post[]
   post_author!:string
 
-  constructor(private route: Router,private us:UserService) {}
+  constructor(private route: Router,private us:UserService,private ps:PostService) {}
   alert:boolean=false
   update:boolean=false
+  liked:boolean=false
 
   ngOnInit(): void {
       this.user=this.us.getUser()
@@ -57,5 +59,9 @@ export class PostComponent implements OnInit {
     this.update=!this.update
   }
 
+  Ilike(){
+    this.ps.likePost(this.post.id!).subscribe({next:(res)=>{console.log(res),this.post=res},
+    error:(err)=>{console.log(err,err.error),this.liked=true}})
+  }
 
 }

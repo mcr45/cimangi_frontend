@@ -62,3 +62,8 @@ app-alertbox{position: relative;}
   margin: 0; /* Remove default margin */
   color: #5b74b1; /* Use primary blue for author username */
 }
+
+
+.liked{
+  filter: invert(22%) sepia(97%) saturate(6423%) hue-rotate(356deg) brightness(108%) contrast(117%);
+}

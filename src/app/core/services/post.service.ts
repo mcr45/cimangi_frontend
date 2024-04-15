@@ -38,5 +38,9 @@ export class PostService {
    this.postListChanged.next(posts)
   }
 
+  likePost(id:number){
+   return this.http.get<Post>(`${environment.apiUrl}/likes/${id}`)
+  }
+
 
 }
