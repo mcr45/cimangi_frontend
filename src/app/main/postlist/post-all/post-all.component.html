@@ -1,4 +1,5 @@
 <div class="main">
+  <div class="paginate"><button [disabled]="current_page==1" (click)="previousPage()">PREV</button><button [disabled]="current_page==total_pages||total_pages==0" (click)="nextPage()">NEXT</button></div>
   <div class="content">
     @for (post of posts; track post.id) {
 

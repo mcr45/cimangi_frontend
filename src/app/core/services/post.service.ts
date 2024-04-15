@@ -12,8 +12,8 @@ export class PostService {
   constructor(private http: HttpClient) {}
   posts!:Post[]
 
-  getPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>(`${environment.apiUrl}/posts`);
+  getPosts(page:number): Observable<Post[]> {
+    return this.http.get<Post[]>(`${environment.apiUrl}/posts?page=${page}`);
   }
   createPost(post: Post) {
     return this.http.post(`${environment.apiUrl}/posts`, post);

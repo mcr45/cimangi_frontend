@@ -30,7 +30,7 @@
     {{ recipe.title }}
   </div>
   <div class="bottom-card">
-    by:{{ recipe.author?.username }} @if(recipe.author?.username===user.username){<app-edit (update)="showUpdate()" (delete)="showDelete()"></app-edit>}
+    by:{{ recipe.author?.username|| 'Admin' }} @if(recipe.author?.username===user.username){<app-edit (update)="showUpdate()" (delete)="showDelete()"></app-edit>}
   </div>
 
   @if (delete) {<app-alertbox [resource]="recipe" [type]="'recipe'" (closeme)="onClose()"  (done)="reload($event)"></app-alertbox>}

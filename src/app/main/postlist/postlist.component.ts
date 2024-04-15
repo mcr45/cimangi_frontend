@@ -16,7 +16,7 @@ export class PostlistComponent implements OnInit {
   error: string = '';
 
   constructor(private postserv: PostService) {}
-  ngOnInit(): void {
+  ngOnInit(): void {/*
     this.postserv.getPosts().subscribe({
       next: (res) => {
         (this.posts = res), console.log(this.posts);
@@ -27,7 +27,7 @@ export class PostlistComponent implements OnInit {
       },
     });
 
-
+ */
   }
 onLoad($event:any){
 
