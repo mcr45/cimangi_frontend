@@ -20,20 +20,7 @@ post!:Post
 constructor(private rs:RecipeService,private ps:PostService){}
 
 ngOnInit(){
- /*  this.rs.getRecipes().subscribe(({next:(res:any)=>{this.recipes=res},
-  error:(err)=>{console.log(err)}}))
-  this.recipe=this.recipes[this.recipes.length-1]
-  console.log(this.recipe) */
-  /* this.rs.getRecipes().subscribe({
-    next: (res: any) => {
-      console.log(res), (this.recipes = res);
-      this.recipe=this.recipes[0]
-  console.log(this.recipe)
-    },
-    error: (err) => {
-      console.log(err);
-    },
-  }); */
+ this.rs.latest().subscribe({next:(res)=>{this.recipe=res},error:(error)=>{console.log(error)}})
 
   this.ps.getBestPost().subscribe({
     next:(res)=>{this.post=res},
