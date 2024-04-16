@@ -49,6 +49,7 @@
       <div class="right">
         <div class="form-box" [class.sign-up]="!toLog">
           <h1>{{ toLog ? "LOGIN" : "SIGNUP" }}</h1>
+          @if(errorMsg){ <span style="color: red;">{{errorMsg}}</span>}
           @if (toLog) {
           <form #loginForm="ngForm" (ngSubmit)="OnFormSubmit(loginForm)">
             <div class="input-container">

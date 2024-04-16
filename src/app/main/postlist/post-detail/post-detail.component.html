@@ -8,7 +8,7 @@
 
     <div class="likes">
       <span>{{ post.likes }}</span
-      ><span><img src="/assets/icons/likes.svg" alt="" /></span>
+      ><span (click)="Ilike()" ><img src="/assets/icons/likes.svg" alt="" [ngClass]="liked?'liked': ''"  /></span>
     </div>
   </div>
   <section class="comment">

@@ -36,7 +36,7 @@ export class AuthenticationComponent {
   ) {}
 
   OnFormSubmit(form: NgForm) {
-    console.log(form.value.username);
+
 
     if (form.valid && this.toLog) {
       this.authServ.logIn(form.value.username, form.value.password).subscribe({
@@ -46,7 +46,8 @@ export class AuthenticationComponent {
           this.authServ.setToken(res.token), this.router.navigate(['/home']);
         },
         error: (error: any) => {
-          this.errorMsg = error;
+          this.errorMsg = error.error.error;
+          console.log(error.error.error)
         },
       });
     }
@@ -67,7 +68,8 @@ export class AuthenticationComponent {
           this.authServ.setToken(res.token), this.router.navigate(['/home']);
         },
         error: (err) => {
-          console.log(err);
+          console.log(err.error);
+          this.errorMsg=err.error;
         },
       });
     }

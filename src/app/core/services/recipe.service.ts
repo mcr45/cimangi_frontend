@@ -28,4 +28,7 @@ export class RecipeService {
   my_most_viewed(){
     return this.http.get<Recipe>(`${environment.apiUrl}/topviewsr`);
   }
+  latest(){
+    return this.http.get<Recipe>(`${environment.apiUrl}/latestrecipe`)
+  }
 }

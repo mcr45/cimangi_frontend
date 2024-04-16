@@ -4,16 +4,18 @@ import { Post } from '../../../shared/models/post';
 import { ActivatedRoute } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { CommentService } from '../../../core/services/comment.service';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-post-detail',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,CommonModule],
   templateUrl: './post-detail.component.html',
   styleUrl: './post-detail.component.scss',
 })
 export class PostDetailComponent implements OnInit {
   id!: number;
   post!: Post;
+  liked:boolean=false
 
   constructor(
     private ps: PostService,
@@ -51,5 +53,8 @@ export class PostDetailComponent implements OnInit {
     }
 
     form.reset();
+  }
+  Ilike(){
+    this.ps.likePost(this.post.id!).subscribe({next:(res)=>{this.post=res},error:(err)=>{console.log(err),this.liked=true}})
   }
 }
