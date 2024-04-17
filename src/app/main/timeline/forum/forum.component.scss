@@ -38,3 +38,29 @@ justify-content: center;}
   height: 100%;
   border-radius: 25px;
 }
+
+
+
+
+@media only screen and (min-width: 720px) and (max-width: 873px){
+main{
+  height: 130%;
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+    padding: 10px;
+}
+
+}
+
+@media only screen and (min-width: 687px) and (max-width: 721px){
+
+main{
+    height: 130%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+}
+
+}
