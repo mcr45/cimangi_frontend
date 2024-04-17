@@ -226,5 +226,55 @@ input{
 
 
 
+@media only screen and (min-width: 725px) and (max-width: 873px) {
+  .left{
+  height: 100vh;
+  padding: 25px;
+  position: fixed;
+  background-color: #5b84b1;
+  grid-column: 1;
+  width: 200px;
+  color: white;
+}
+.right{
+  width: 100%;
+    margin-left: 200px;
+    padding-left: 0%;
+    height: 130%;
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+}
+
+@media only screen and (min-width: 687px) and (max-width: 721px){
+
+h1{
+  font-size: 1em;
+    margin: 0.67em 0;
+}
 
 
+.left{
+  height: 100vh;
+    padding: 25px;
+    position: fixed;
+    background-color: #5b84b1;
+    grid-column: 1;
+    width: 170px;
+    color: white;
+}
+
+.right{
+  width: 100%;
+    margin-left: 170px;
+    padding-left: 0%;
+    height: 130%;
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+
+}
