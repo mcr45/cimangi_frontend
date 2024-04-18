@@ -23,9 +23,9 @@ export const routes: Routes = [
   ,
   {path:'home',component:TimelineComponent
 /* loadComponent:()=>import('./main/timeline/timeline.component').then((c)=>c.TimelineComponent) */,canActivate:[authGuard],children:[
-  {path:'',loadComponent:()=>import('./main/timeline/forum/forum.component').then((ff)=>ff.ForumComponent)},
+  {path:'',component:ForumComponent/* loadComponent:()=>import('./main/timeline/forum/forum.component').then((ff)=>ff.ForumComponent) */},
  /* { path:'',loadComponent:()=>import('./main/postlist/postlist.component').then((d)=>d.PostlistComponent)
-}, */{path:'post',loadComponent:()=>import('./main/postlist/post-form/post-form.component').then((e=>e.PostFormComponent))},
+}, */{path:'post',component:PostFormComponent/* loadComponent:()=>import('./main/postlist/post-form/post-form.component').then((e=>e.PostFormComponent)) */},
 {path:'posts',component:PostAllComponent/* loadComponent:()=>import('./main/postlist/post-all/post-all.component').then((l)=>l.PostAllComponent) */},
 {path:'posts/:id/info',component:PostDetailComponent/* loadComponent:()=>import('./main/postlist/post-detail/post-detail.component').then((dimmi)=>dimmi.PostDetailComponent )*/
   ,pathMatch:'full'}, {path:'recipes',component:RecipelistComponent},
