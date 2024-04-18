@@ -30,7 +30,8 @@ loadComponent:()=>import('./main/timeline/timeline.component').then((c)=>c.Timel
 {path:'posts/:id/info',loadComponent:()=>import('./main/postlist/post-detail/post-detail.component').then((dimmi)=>dimmi.PostDetailComponent)
   ,pathMatch:'full'},
   {path:'recipe',loadComponent:()=>import('./main/recipelist/recipe-form/recipe-form.component').then((pappa)=>pappa.RecipeFormComponent)},
-  {path:'recipes',loadComponent:()=>import('./main/recipelist/recipelist.component').then((r)=>r.RecipelistComponent)},
+  /* {path:'recipes',loadComponent:()=>import('./main/recipelist/recipelist.component').then((r)=>r.RecipelistComponent)}, */
+  {path:'recipes',component:RecipelistComponent},
   {path:'recipes/:id/info',loadComponent:()=>import('./main/recipelist/recipe-detail/recipe-detail.component').then((cook)=>cook.RecipeDetailComponent)}
 ]
 }
