@@ -42,8 +42,9 @@ export class AuthenticationComponent {
       this.authServ.logIn(form.value.username, form.value.password).subscribe({
         next: (res: any) => {
           console.log(res);
-          this.us.setUser(res.user);
           this.authServ.setToken(res.token), this.router.navigate(['/home']);
+          this.us.setUser(res.user);
+
         },
         error: (error: any) => {
           this.errorMsg = error.error.error;
@@ -64,8 +65,8 @@ export class AuthenticationComponent {
       this.authServ.signup(this.createUser).subscribe({
         next: (res: any) => {
           console.log(res);
-          this.us.setUser(res.user);
           this.authServ.setToken(res.token), this.router.navigate(['/home']);
+          this.us.setUser(res.user);
         },
         error: (err) => {
           console.log(err.error);
