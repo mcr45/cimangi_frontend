@@ -18,11 +18,12 @@ export class UserService {
   usersubject!: BehaviorSubject<User>;
   constructor(private http: HttpClient) {}
 
-  setUser(userdata: User) {
+  setUser() {
     /* this.user = new User(userdata); */
-    this.http.get<User>(`${environment.apiUrl}/loggeduser`).subscribe((res) => {
+    /* this.http.get<User>(`${environment.apiUrl}/loggeduser`).subscribe((res) => {
       this.user = res;
-    });
+    }) */;
+    return this.http.get<User>(`${environment.apiUrl}/loggeduser`)
   }
   getUser() {
     return this.user;
