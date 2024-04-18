@@ -19,7 +19,7 @@ export const routes: Routes = [
   {path:'',pathMatch:"full",
   loadComponent:()=>import('./features/authentication/authentication.component').then((a)=>a.AuthenticationComponent),canActivate:[nonAuthGuard]
   },{path:'login',redirectTo:''},
-  {path:'settings',loadComponent:()=>import('./main/settings/settings.component').then((c)=>c.SettingsComponent),canActivate:[authGuard]}
+  {path:'settings',component:SettingsComponent/* loadComponent:()=>import('./main/settings/settings.component').then((c)=>c.SettingsComponent) */,canActivate:[authGuard]}
   ,
   {path:'home',component:TimelineComponent
 /* loadComponent:()=>import('./main/timeline/timeline.component').then((c)=>c.TimelineComponent) */,canActivate:[authGuard],children:[
