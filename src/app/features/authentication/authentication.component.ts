@@ -66,8 +66,8 @@ export class AuthenticationComponent {
         next: (res: any) => {
           console.log(res);
           this.authServ.setToken(res.token), this.router.navigate(['/home']);
-          /* this.us.setUser(res.user); */
-          this.us.setUser().subscribe({next:(rispo)=>{console.log(rispo)},error:(err)=>{console.log(err)}})
+          this.us.setUser(res.user);
+         /*  this.us.setUser().subscribe({next:(rispo)=>{console.log(rispo)},error:(err)=>{console.log(err)}}) */
         },
         error: (err) => {
           console.log(err.error);
