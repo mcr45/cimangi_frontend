@@ -26,13 +26,13 @@ export const routes: Routes = [
   {path:'',loadComponent:()=>import('./main/timeline/forum/forum.component').then((ff)=>ff.ForumComponent)},
  /* { path:'',loadComponent:()=>import('./main/postlist/postlist.component').then((d)=>d.PostlistComponent)
 }, */{path:'post',loadComponent:()=>import('./main/postlist/post-form/post-form.component').then((e=>e.PostFormComponent))},
-{path:'posts',loadComponent:()=>import('./main/postlist/post-all/post-all.component').then((l)=>l.PostAllComponent)},
-{path:'posts/:id/info',loadComponent:()=>import('./main/postlist/post-detail/post-detail.component').then((dimmi)=>dimmi.PostDetailComponent)
+{path:'posts',component:PostAllComponent/* loadComponent:()=>import('./main/postlist/post-all/post-all.component').then((l)=>l.PostAllComponent) */},
+{path:'posts/:id/info',component:PostDetailComponent/* loadComponent:()=>import('./main/postlist/post-detail/post-detail.component').then((dimmi)=>dimmi.PostDetailComponent )*/
   ,pathMatch:'full'}, {path:'recipes',component:RecipelistComponent},
-  {path:'recipe',loadComponent:()=>import('./main/recipelist/recipe-form/recipe-form.component').then((pappa)=>pappa.RecipeFormComponent)},
+  {path:'recipe',component:RecipeFormComponent/* loadComponent:()=>import('./main/recipelist/recipe-form/recipe-form.component').then((pappa)=>pappa.RecipeFormComponent) */},
   /* {path:'recipes',loadComponent:()=>import('./main/recipelist/recipelist.component').then((r)=>r.RecipelistComponent)}, */
 
-  {path:'recipes/:id/info',loadComponent:()=>import('./main/recipelist/recipe-detail/recipe-detail.component').then((cook)=>cook.RecipeDetailComponent)}
+  {path:'recipes/:id/info',component:RecipeDetailComponent/* loadComponent:()=>import('./main/recipelist/recipe-detail/recipe-detail.component').then((cook)=>cook.RecipeDetailComponent) */}
 ]
 }
 
